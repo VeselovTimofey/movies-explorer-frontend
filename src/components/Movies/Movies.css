@@ -1,5 +1,5 @@
-.content {
+.movies {
+  width: 89.0625%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }

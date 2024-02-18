@@ -15,7 +15,7 @@ class Main extends React.Component {
         <AboutMe />
         <Portfolio />
       </main>
-    );
+    )
   }
 }
 

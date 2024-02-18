@@ -1,0 +1,68 @@
+.filter {
+  margin-bottom: 42px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter__checkbox {
+  height: 14px;
+  width: 34px;
+  display: inline-block;
+  position: relative;
+}
+
+.filter__check-button {
+  display: none;
+}
+
+.filter__check-space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 34px;
+  border-radius: 20px;
+  background-color: #343434;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.filter__checkmark {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.filter__check-button:checked + .filter__check-space {
+  background-color: #2BE080;
+}
+
+.filter__check-button:checked + .filter__checkmark {
+  animation: move 1s linear;
+}
+
+.filter__label {
+  margin-left: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #FFFFFF; 
+}
+
+@keyframes move {
+  0% {
+    background-color: #A0A0A0;
+    transform: translateX(0);
+  }
+  100% {
+    background-color: #FFFFFF;
+    transform: translateX(20px);
+  }
+}

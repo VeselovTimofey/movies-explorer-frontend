@@ -1,0 +1,24 @@
+.movies-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+}
+
+.movies-card__save {
+  display: none;
+}
+
+.movies-card__unsave {
+  display: none;
+}
+
+.movies-card__image {
+  height: 201px;
+  width: 360px;
+  grid-column: 1/3;
+}
+
+.movies-card__name {}
+
+.movies-card__time {}

@@ -36,6 +36,7 @@
   width: 10px;
   border-radius: 50%;
   cursor: pointer;
+  background-color: #A0A0A0;
 }
 
 .filter__check-button:checked + .filter__check-space {
@@ -43,7 +44,7 @@
 }
 
 .filter__check-button:checked + .filter__checkmark {
-  animation: move 1s linear;
+  animation: move-checkmark .4s linear;
 }
 
 .filter__label {
@@ -56,7 +57,7 @@
   color: #FFFFFF; 
 }
 
-@keyframes move {
+@keyframes move-checkmark {
   0% {
     background-color: #A0A0A0;
     transform: translateX(0);

@@ -6,8 +6,12 @@ class LogForm extends React.Component {
     return (
       <section className="log">
         <form className="log__form">
-          <label className="log__form-label" for="username">Имя</label>
-          <input className="log__form-input" type="text" id="username" />
+          {(this.props.isName) && (
+            <>
+              <label className="log__form-label" for="username">Имя</label>
+              <input className="log__form-input" type="text" id="username" />
+            </>
+          )}
           <label className="log__form-label" for="useremail">E-mail</label>
           <input className="log__form-input" type="email" id="useremail"/>
           <label className="log__form-label" for="userpassword">Пароль</label>

@@ -12,6 +12,7 @@ class Register extends React.Component {
           formButton="Зарегистрироваться"
           bottomParagraph="Уже зарегистрированы?"
           bottomLink="Войти"
+          isName={true}
         />
       </section>
     );

@@ -7,6 +7,7 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import Footer from '../Footer/Footer';
+import Register from '../Register/Register';
 
 class App extends React.Component {
   render() {
@@ -40,6 +41,7 @@ class App extends React.Component {
               <Profile />
             </>
           } />
+          <Route path="/signup" element={<Register />} />
         </Routes>
       </>
     );

@@ -17,7 +17,7 @@
 .search__input {
   height: 50px;
   width: 95%;
-  padding: 0;
+  padding: 0 0 0 20px;
   border: 0;
   border-radius: 8px;
   background-color: #2F2F2F;

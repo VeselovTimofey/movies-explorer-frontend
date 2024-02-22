@@ -1,8 +1,7 @@
 .filter {
-  margin-bottom: 42px;
+  margin: 0 0 42px 3px;
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 .filter__checkbox {
@@ -37,14 +36,16 @@
   border-radius: 50%;
   cursor: pointer;
   background-color: #A0A0A0;
+  transition: .4s;
 }
 
 .filter__check-button:checked + .filter__check-space {
   background-color: #2BE080;
 }
 
-.filter__check-button:checked + .filter__checkmark {
-  animation: move-checkmark .4s linear;
+.filter__check-button:checked ~ .filter__checkmark {
+  background-color: #FFFFFF;
+  transform: translateX(20px);
 }
 
 .filter__label {
@@ -55,15 +56,4 @@
   letter-spacing: 0em;
   text-align: left;
   color: #FFFFFF; 
-}
-
-@keyframes move-checkmark {
-  0% {
-    background-color: #A0A0A0;
-    transform: translateX(0);
-  }
-  100% {
-    background-color: #FFFFFF;
-    transform: translateX(20px);
-  }
 }

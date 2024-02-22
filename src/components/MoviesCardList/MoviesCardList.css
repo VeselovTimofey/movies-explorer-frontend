@@ -1,11 +1,13 @@
 .movies__list {
+  margin-top: 70px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
   justify-content: space-between;
-  row-gap: 60px;
+  row-gap: 57px;
 }
 
 .movies__preloader {
+  display: none;
   height: 38px;
   width: 38px;
   margin: 20px 0;
@@ -16,7 +18,7 @@
 .movies__button {
   height: 36px;
   width: 320px;
-  margin: 50px 0 80px 0;
+  margin: 75px 0 100px 0;
   align-self: center;
   background-color: #202020;
   border: 1px solid #424242;
@@ -31,6 +33,10 @@
   letter-spacing: 0px;
   text-align: center;
   color: #FFFFFF;
+}
+
+.movies__space {
+  margin-top: 260px;
 }
 
 @keyframes move {

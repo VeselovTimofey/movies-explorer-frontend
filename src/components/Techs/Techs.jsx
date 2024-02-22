@@ -3,7 +3,7 @@ import React from 'react';
 class Techs extends React.Component {
   render() {
     return (
-      <section className="techs section">
+      <section className="techs" id="techs">
         <h2 className="section__title">Технологии</h2>
         <h3 className="techs__subtitle section__subtitle">7 технологий</h3>
         <p className="techs__paragraph section__paragraph">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>

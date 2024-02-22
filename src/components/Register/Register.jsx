@@ -11,7 +11,8 @@ class Register extends React.Component {
         <LogForm 
           formButton="Зарегистрироваться"
           bottomParagraph="Уже зарегистрированы?"
-          bottomLink="Войти"
+          bottomLink="/signin"
+          bottomLinkName="Войти"
           isName={true}
         />
       </section>

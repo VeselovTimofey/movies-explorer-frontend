@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import checkLogoPath from '../../images/svg/check.svg'
 
@@ -15,7 +16,9 @@ class MoviesCard extends React.Component {
             </button>
           )}
         </div>
-        <img className="movies-card__image" src={this.props.cardInfo.image} alt={this.props.cardInfo.name} />
+        <Link to="/movies" className="movies-card__link-image">
+          <img className="movies-card__image" src={this.props.cardInfo.image} alt={this.props.cardInfo.name} />
+        </Link>
         <h2 className="movies-card__name">{this.props.cardInfo.name}</h2>
         <p className="movies-card__time">{this.props.cardInfo.duration}</p>
       </article>

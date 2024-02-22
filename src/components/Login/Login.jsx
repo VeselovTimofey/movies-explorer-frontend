@@ -11,7 +11,8 @@ class Login extends React.Component {
         <LogForm
           formButton="Войти"
           bottomParagraph="Ещё не зарегистрированы?"
-          bottomLink="Регистрация"
+          bottomLink="/signup"
+          bottomLinkName="Регистрация"
           isName={false}
         />
       </section>

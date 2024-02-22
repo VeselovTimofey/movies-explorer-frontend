@@ -3,7 +3,7 @@ import React from 'react';
 class AboutProject extends React.Component {
   render() {
     return (
-      <section className="about-project section">
+      <section className="about-project" id="about-project">
         <h2 className="about-project__title section__title">О проекте</h2>
         <h3 className="about-project__subtitle">Дипломный проект включал 5 этапов</h3>
         <h3 className="about-project__subtitle">На выполнение диплома ушло 5 недель</h3>

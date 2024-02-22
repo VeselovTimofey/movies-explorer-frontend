@@ -1,4 +1,5 @@
 .about-project {
+  width: 89.0625%;
   margin: 110px 0;
   display: grid;
   grid-template-columns: 50% 48%;

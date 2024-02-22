@@ -1,4 +1,5 @@
 .about-me {
+  width: 89.0625%;
   margin-top: 110px;
   display: grid;
   grid-template-columns: 52% 48%;

@@ -20,7 +20,7 @@ class LogForm extends React.Component {
         </form>
         <div className="log__bottom">
           <p className="log__paragraph">{this.props.bottomParagraph}</p>
-          <Link className="log__link">{this.props.bottomLink}</Link>
+          <Link to={this.props.bottomLink} className="log__link">{this.props.bottomLinkName}</Link>
         </div>
       </section>
     )

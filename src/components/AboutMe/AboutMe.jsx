@@ -6,11 +6,11 @@ class AboutMe extends React.Component {
   render() {
     return (
       <section className="about-me" id="about-me">
-        <h2 className="about-me__title section__title">Студент</h2>
-        <h3 className="about-me__subtitle section__subtitle">Виталий</h3>
+        <h2 className="about-me__title section__title reqular-font_size_big">Студент</h2>
+        <h3 className="about-me__subtitle section__subtitle reqular-font_size_huge">Виталий</h3>
         <p className="about-me__paragraph">Фронтенд-разработчик, 30 лет</p>
-        <p className="section__paragraph">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
-        <a href="https://github.com/VeselovTimofey/" className="about-me__link">Github</a>
+        <p className="about-me__description section__paragraph">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
+        <a href="https://github.com/VeselovTimofey/" className="about-me__link medium-font_size_medium">Github</a>
         <img className="about-me__img" src={avatarPath} alt="Анфас молодого человека."/>
       </section>
     )

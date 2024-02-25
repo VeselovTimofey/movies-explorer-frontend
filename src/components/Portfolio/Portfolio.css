@@ -32,6 +32,10 @@
   color: #FFFFFF;
 }
 
+.portfolio__paragraph_displacement_left {
+  margin-right: 5px;
+}
+
 .portfolio__link:not(:last-child) {
   margin-bottom: 20px;
   border-bottom: 1px solid #424242; 

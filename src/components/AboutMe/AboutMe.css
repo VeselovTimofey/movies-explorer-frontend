@@ -23,11 +23,15 @@
   color: #FFFFFF;
 }
 
+.about-me__description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+}
+
 .about-me__link {
   margin-top: 99px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 17px;
   letter-spacing: 0em;
   color: #FFFFFF;
   text-decoration: none;

@@ -7,15 +7,15 @@ class Portfolio extends React.Component {
         <h3 className="portfolio__title">Портфолио</h3>
         <a href="https://github.com/VeselovTimofey/how-to-learn" className="portfolio__link">
           <p className="portfolio__paragraph">Статичный сайт</p>
-          <p className="portfolio__paragraph">&#8599;</p>
+          <p className="portfolio__paragraph portfolio__paragraph_displacement_left">&#8599;</p>
         </a>
         <a href="https://github.com/VeselovTimofey/russian-travel" className="portfolio__link">
           <p className="portfolio__paragraph">Адаптивный сайт</p>
-          <p className="portfolio__paragraph">&#8599;</p>
+          <p className="portfolio__paragraph portfolio__paragraph_displacement_left">&#8599;</p>
         </a>
         <a href="https://github.com/VeselovTimofey/react-mesto-api-full-gha" className="portfolio__link">
           <p className="portfolio__paragraph">Одностраничное приложение</p>
-          <p className="portfolio__paragraph">&#8599;</p>
+          <p className="portfolio__paragraph portfolio__paragraph_displacement_left">&#8599;</p>
         </a>
       </section>
     )

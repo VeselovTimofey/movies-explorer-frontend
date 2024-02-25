@@ -8,10 +8,10 @@ class SmallHeader extends React.Component {
   render() {
     return (
       <header className="small-header">
-        <Link to="/">
-          <img className="header__logo" src={logoPath} alt="Зелёное кольцо." />
+        <Link className="header__logo" to="/">
+          <img src={logoPath} alt="Зелёное кольцо." />
         </Link>
-        <h1 className="small-header__title">{this.props.headerTitle}</h1>
+        <h1 className="small-header__title medium-font_size_big">{this.props.headerTitle}</h1>
       </header>
     )
   }

@@ -13,11 +13,13 @@
 
 .about-project__subtitle {
   margin: 70px 0 26px 0;
-  font-size: 20px;
   font-weight: 400;
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 24.2px;
   letter-spacing: -0.04em;
-  color: #FFFFFF; 
+  text-align: left;
+  color: #FFFFFF;
+  font-family: Inter;
 }
 
 .time-line {
@@ -35,9 +37,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
   letter-spacing: 0em;
   text-align: center;
 }
@@ -48,9 +47,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
   letter-spacing: 0em;
   text-align: center;
   color: #FFFFFF;

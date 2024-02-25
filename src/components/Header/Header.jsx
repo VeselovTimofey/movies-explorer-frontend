@@ -13,12 +13,12 @@ class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <Link to="/">
-          <img className="header__logo" src={logoPath} alt="Зелёное кольцо." />
+        <Link className="header__logo" to="/">
+          <img src={logoPath} alt="Зелёное кольцо." />
         </Link>
         {(!this.state.isLogin) && (
           <>
-            <Link to="/signup" className="header__link header__link_type_registration">Регистрация</Link>
+            <Link to="/signup" className="header__link header__link_type_registration medium-font_size_tiny">Регистрация</Link>
             <Link to="/signin" className="header__link header__link_type_login">Войти</Link>
           </>
         )}

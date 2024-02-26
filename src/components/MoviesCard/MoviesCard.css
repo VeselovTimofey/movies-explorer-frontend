@@ -111,3 +111,26 @@
   color: #8B8B8B;
   background-color: #2F2F2F;
 }
+
+@media screen and (max-width: 860px) {
+  .movies-card {
+    row-gap: 25px;
+  }
+
+  .movies-card__link-image {
+    height: 190px;
+  }
+
+  .movies-card__image {
+    height: 190px;
+    width: 339px;
+  }
+
+  .movies-card__name {
+    margin: 0;
+  }
+
+  .movies-card__time {
+    margin: 0;
+  }
+}

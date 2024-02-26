@@ -1,6 +1,5 @@
 .portfolio {
-  width: 89.0625%;
-  margin: 100px 0 125px 0;
+  margin: 0 70px 125px 70px;
   display: flex;
   flex-direction: column;
 }
@@ -39,4 +38,14 @@
 .portfolio__link:not(:last-child) {
   margin-bottom: 20px;
   border-bottom: 1px solid #424242; 
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio {
+    margin: 0 50px 125px 50px;
+  }
+  .portfolio__paragraph {
+    font-size: 28px;
+    line-height: 50px;
+  }
 }

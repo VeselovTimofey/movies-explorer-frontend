@@ -1,6 +1,5 @@
 .about-me {
-  width: 89.0625%;
-  margin-top: 110px;
+  margin: 110px 70px 100px 70px;
   display: grid;
   grid-template-columns: 52% 48%;
   grid-template-rows: repeat(5, auto);
@@ -46,4 +45,31 @@
   grid-column: 2/3;
   grid-row: 2/6;
   justify-self: right;
+}
+
+@media screen and (max-width: 768px) {
+  .about-me {
+    margin: 90px 50px;
+    grid-template-columns: 54% 46%;
+  }
+  .about-me__subtitle {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .about-me__paragraph {
+    margin: 15px 0 20px 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .about-me__description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .about-me__link {
+    margin-top: 87px;
+  }
+  .about-me__img {
+    height: 307px; 
+    width: 255px;
+  }
 }

@@ -37,3 +37,9 @@
   background-image: url("../../images/svg/button.svg");
   background-color: #202020;
 }
+
+@media screen and (max-width: 768px) {
+  .search {
+    gap: 40px;
+  }
+}

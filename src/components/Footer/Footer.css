@@ -1,6 +1,5 @@
 .footer {
-  width: 89.0625%;
-  margin: 59px 0 20px 0;
+  margin: 59px 70px 20px 70px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
@@ -34,4 +33,10 @@
   text-align: right;
   color: #FFFFFF;
   text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    margin: 25px 30px 20px 30px;
+  }
 }

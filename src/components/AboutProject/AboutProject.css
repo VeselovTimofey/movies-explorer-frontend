@@ -1,6 +1,5 @@
 .about-project {
-  width: 89.0625%;
-  margin: 110px 0;
+  margin: 110px 70px;
   display: grid;
   grid-template-columns: 50% 48%;
   column-gap: 2%;
@@ -19,7 +18,6 @@
   letter-spacing: -0.04em;
   text-align: left;
   color: #FFFFFF;
-  font-family: Inter;
 }
 
 .time-line {
@@ -60,4 +58,17 @@
   letter-spacing: 0px;
   text-align: center;
   color: #8B8B8B;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project {
+    margin: 90px 50px;
+  }
+  .about-project__subtitle {
+    margin: 70px 0 22px 0;
+  }
+  .time-line {
+    margin-top: 93px;
+    grid-template-columns: 21% 79%;
+  }
 }

@@ -1,6 +1,6 @@
 .header {
   height: 74px;
-  width: 89.0625%;
+  margin: 0 70px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -63,4 +63,10 @@
   color: #FFFFFF;
   background-color: #313131;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    margin: 0 30px;
+  }
 }

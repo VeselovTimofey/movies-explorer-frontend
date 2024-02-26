@@ -1,5 +1,6 @@
 .register {
   width: 396px;
+  align-self: center;
   display: flex;
   flex-direction: column;
 }

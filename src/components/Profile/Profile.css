@@ -62,3 +62,13 @@
 .profile__button_color_red {
   color: #EE3465;
 }
+
+@media screen and (max-width: 768px) {
+  .profile__title {
+    margin: 236px 0 0 0;
+  }
+
+  .profile__info {
+    margin: 95px 0 175px 0;
+  }
+}

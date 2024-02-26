@@ -28,7 +28,7 @@ class Header extends React.Component {
               <Link to="/movies" className="header__nav-link">Фильмы</Link>
               <Link to="/saved-movies" className="header__nav-link">Сохранённые фильмы</Link>
             </nav>
-          <Link to="/profile" className="header__link header__link_type_account">Аккаунт</Link>
+            <Link to="/profile" className="header__link header__link_type_account">Аккаунт</Link>
           </>
         )}
       </header>

@@ -47,3 +47,18 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 860px) {
+  .movies__list {
+    grid-template-columns: repeat(auto-fit, 339px);
+    row-gap: 44px;
+  }
+
+  .movies__button {
+    margin: 62px 0 134px 0;
+  }
+
+  .movies__space {
+    margin-top: 229px;
+  }
+}

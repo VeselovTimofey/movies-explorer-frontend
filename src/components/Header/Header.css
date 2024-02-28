@@ -137,6 +137,23 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .header {
+    margin: 0 14px;
+    gap: 14px;
+  }
+
+  .header__link_type_registration {
+    font-size: 10px;
+  }
+
+  .header__link_type_login {
+    height: 26px;
+    width: 54px;
+    font-size: 10px;
+  }
+}
+
 .header__popup_inline {
   display: flex;
 }

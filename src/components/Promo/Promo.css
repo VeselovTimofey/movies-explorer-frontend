@@ -31,3 +31,17 @@
     line-height: 52px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .promo {
+    height: 586px;
+    margin: 14px 14px 0 14px;
+  }
+
+  .promo__title {
+    width: 100%;
+    margin-bottom: 212px;
+    font-size: 29px;
+    line-height: 37px;
+  }
+}

@@ -80,7 +80,7 @@
     margin: 0 30px;
   }
 
-  .header_button_open {
+  .header__button-open {
     display: inline;
     height: 44px;
     width: 44px;
@@ -135,6 +135,16 @@
     text-underline-offset: 8px;
     text-decoration-thickness: 2px;
   }
+
+  .header__button-open {
+    height: 43px; 
+    width: 40px;
+  }
+
+  .header__image-open {
+    height: 43px;
+    width: 36px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -151,6 +161,23 @@
     height: 26px;
     width: 54px;
     font-size: 10px;
+  }
+
+  .header__nav {
+    width: 100vw;
+    gap: 24px;
+  }
+
+  .header__nav-close {
+    margin: 2px 16px 73px 0;
+  }
+
+  .header__link_underline {
+    text-underline-offset: 11px;
+  }
+
+  .header__link_type_account {
+    margin: 419px 0 0 0;
   }
 }
 

@@ -43,3 +43,16 @@
     gap: 40px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .search {
+    margin: 80px 4px 10px 4px;
+    gap: 47px;
+  }
+
+  .search__input {
+    height: 44px;
+    width: 70.3125vw;
+    padding-left: 13px;
+  }
+}

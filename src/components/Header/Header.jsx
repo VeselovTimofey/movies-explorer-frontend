@@ -34,8 +34,8 @@ class Header extends React.Component {
         )}
         {(this.state.isLogin) && (
           <>
-            <button onClick={this.handleClick} className={"header_button_open"}>
-              <img src={popupPath} alt="Три горизонтальные линии." />
+            <button onClick={this.handleClick} className="header__button-open">
+              <img className="header__image-open" src={popupPath} alt="Три горизонтальные линии." />
             </button>
             <nav className={this.state.isNavOpen ? "header__nav header__popup_inline" : "header__nav"}>
               <button onClick={this.handleClick} className="header__nav-close header__popup-element">&#215;</button>

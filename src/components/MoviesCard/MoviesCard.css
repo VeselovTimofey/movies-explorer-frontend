@@ -82,7 +82,7 @@
 .movies-card__image {
   height: 201px;
   width: 360px;
-  border-radius: 3px;
+  border-radius: 5px;
   object-fit: cover;
 }
 
@@ -132,5 +132,31 @@
 
   .movies-card__time {
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .movies-card {
+    row-gap: 16px;
+  }
+
+  .movies-card__status {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .movies-card__link-image {
+    height: 168px;
+    width: 300px;
+  }
+
+  .movies-card__image {
+    height: 168px;
+    width: 300px;
+  }
+
+  .movies-card__name {
+    font-size: 12px;
+    line-height: 14.52px;
   }
 }

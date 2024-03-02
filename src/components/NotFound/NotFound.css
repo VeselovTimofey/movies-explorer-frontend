@@ -37,5 +37,28 @@
 @media screen and (max-width: 768px) {
   .not-found {
     margin-top: 408px;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .not-found {
+    margin-top: 329px;
+  }
+
+  .not-found__title {
+    font-size: 80px;
+    line-height: 97px;
+  }
+
+  .not-found__paragraph {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .not-found__link {
+    margin-top: 275px;
+    font-size: 12px;
+    line-height: 14.52px;
   }
 }

@@ -68,3 +68,30 @@
   text-decoration: none;
   color: #4285F4;    
 }
+
+@media screen and (max-width: 397px) {
+  .log__form {
+    height: 468px;
+  }
+
+  .log__form-button {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .log__bottom {
+    margin-top: 14px;
+    gap: 8px;
+  }
+
+  .log__paragraph {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .log__link {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}

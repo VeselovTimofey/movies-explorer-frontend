@@ -17,3 +17,11 @@
     margin-top: 232px;
   }
 }
+
+@media screen and (max-width: 397px) {
+  .small-header {
+    margin: 56px 0 80px 0;
+    align-items: center;
+    gap: 50px;
+  }
+}

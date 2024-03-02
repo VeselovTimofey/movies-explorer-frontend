@@ -48,7 +48,7 @@
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 880px) {
   .movies__list {
     grid-template-columns: repeat(auto-fit, 339px);
     row-gap: 44px;
@@ -63,7 +63,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .movies__list {
     margin-top: 40px;
     grid-template-columns: repeat(auto-fit, 300px);
@@ -77,5 +77,11 @@
 
   .movies__space {
     margin-top: 170px;
+  }
+}
+
+@media screen and (max-width: 636px) {
+  .movies__list {
+    justify-content: center;
   }
 }

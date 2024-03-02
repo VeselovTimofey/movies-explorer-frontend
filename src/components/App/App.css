@@ -87,14 +87,14 @@
   color: #FFFFFF;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .reqular-font_size_medium {
     font-size: 12px;
     line-height: 18px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .section__title {
     font-size: 18px;
     line-height: 22px;

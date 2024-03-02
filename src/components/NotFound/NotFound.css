@@ -34,16 +34,16 @@
   color: #4285F4;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .not-found {
     margin-top: 408px;
-    gap: 10px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .not-found {
     margin-top: 329px;
+    gap: 10px;
   }
 
   .not-found__title {

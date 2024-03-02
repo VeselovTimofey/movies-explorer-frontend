@@ -38,13 +38,13 @@
   background-color: #202020;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .search {
     gap: 40px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .search {
     margin: 80px 4px 10px 4px;
     gap: 47px;
@@ -52,7 +52,6 @@
 
   .search__input {
     height: 44px;
-    width: 70.3125vw;
     padding-left: 13px;
   }
 }

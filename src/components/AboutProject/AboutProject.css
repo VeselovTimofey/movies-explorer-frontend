@@ -65,7 +65,7 @@
   color: #8B8B8B;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .about-project {
     margin: 90px 50px;
   }
@@ -78,7 +78,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .about-project {
     margin: 70px 18px;
     display: flex;

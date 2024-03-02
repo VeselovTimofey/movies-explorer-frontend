@@ -47,7 +47,7 @@
   justify-self: right;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .about-me {
     margin: 90px 50px;
     grid-template-columns: 54% 46%;
@@ -74,7 +74,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .about-me {
     margin: 70px 14px;
     display: flex;

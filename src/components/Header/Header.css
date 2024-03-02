@@ -19,7 +19,7 @@
   gap: 16px;
 }
 
-.header_button_open {
+.header__button-open {
   display: none;
 }
 
@@ -75,7 +75,7 @@
   border-radius: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .header {
     margin: 0 30px;
   }
@@ -147,7 +147,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .header {
     margin: 0 14px;
     gap: 14px;

@@ -40,7 +40,7 @@
   border-bottom: 1px solid #424242; 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .portfolio {
     margin: 0 50px 125px 50px;
   }
@@ -50,7 +50,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 755px) {
   .portfolio {
     margin: 0 14px 70px 14px;
   }

@@ -12,13 +12,13 @@
   color: #FFFFFF;    
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 880px) {
   .small-header {
     margin-top: 232px;
   }
 }
 
-@media screen and (max-width: 397px) {
+@media screen and (max-width: 755px) {
   .small-header {
     margin: 56px 0 80px 0;
     align-items: center;

@@ -11,10 +11,10 @@ class Header extends React.Component {
       isLogin: false,
       isNavOpen: false,
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.handleNavClick = this.handleNavClick.bind(this);
   }
 
-  handleClick() {
+  handleNavClick() {
     this.setState(prevState => ({
       isNavOpen: !prevState.isNavOpen
     }));
@@ -34,11 +34,11 @@ class Header extends React.Component {
         )}
         {(this.state.isLogin) && (
           <>
-            <button onClick={this.handleClick} className="header__button-open">
+            <button onClick={this.handleNavClick} className="header__button-open">
               <img className="header__image-open" src={popupPath} alt="Три горизонтальные линии." />
             </button>
             <nav className={this.state.isNavOpen ? "header__nav header__popup_inline" : "header__nav"}>
-              <button onClick={this.handleClick} className="header__nav-close header__popup-element">&#215;</button>
+              <button onClick={this.handleNavClick} className="header__nav-close header__popup-element">&#215;</button>
               <Link to="/" className="header__nav-link header__popup-element">Главная</Link>
               <Link to="/movies" className="header__nav-link header__link_underline">Фильмы</Link>
               <Link to="/saved-movies" className="header__nav-link">Сохранённые фильмы</Link>

@@ -13,7 +13,7 @@ class AboutProject extends React.Component {
           <h3 className="time-description__subtitle">На выполнение диплома ушло 5 недель</h3>
           <p className="section__paragraph reqular-font_size_medium">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
         </section>
-        <section className="time-line">
+        <section className="time-line" aria-label="График выполнения.">
           <div className="time-line__back-end reqular-font_size_small">1 неделя</div>
           <div className="time-line__front-end reqular-font_size_small">4 недели</div>
           <p className="time-line__description">Back-end</p>

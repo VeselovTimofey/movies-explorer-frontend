@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class LogForm extends React.Component {
   render() {
     return (
-      <section className="log">
+      <section className="log" aria-label="Форма входа или регистрации.">
         <form className="log__form">
           {(this.props.isName) && (
             <>

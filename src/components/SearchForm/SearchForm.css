@@ -16,7 +16,7 @@
 
 .search__input {
   height: 50px;
-  width: 95%;
+  flex-grow: 1;
   padding: 0 0 0 20px;
   border: 0;
   outline: none;
@@ -35,6 +35,7 @@
   width: 44px;
   padding: 0;
   border: 0;
+  cursor: pointer;
   background-image: url("../../images/svg/button.svg");
   background-color: #202020;
 }

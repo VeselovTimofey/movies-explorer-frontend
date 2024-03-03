@@ -29,7 +29,7 @@ class Profile extends React.Component {
               <p className="profile__data">Виталий</p> 
             )}
             {(this.state.isRedaction) && (
-              <input className="profile__data profile__input" type="text" id="username" value="Виталий" />
+              <input className="profile__data profile__input" type="text" id="username" defaultValue="Виталий" />
             )}
             <div className="profile__line" />
             <h2 className="profile__subtitle">E-mail</h2>
@@ -37,7 +37,7 @@ class Profile extends React.Component {
               <p className="profile__data">pochta@yandex.ru</p>
             )}
             {(this.state.isRedaction) && (
-              <input className="profile__data profile__input" type="email" id="useremail" value="pochta@yandex.ru" />
+              <input className="profile__data profile__input" type="email" id="useremail" defaultValue="pochta@yandex.ru" />
             )}
           </form>
             {(!this.state.isRedaction) && (
@@ -48,7 +48,7 @@ class Profile extends React.Component {
             )}
             {(this.state.isRedaction) && (
               <>
-                <span class="profile__error">При обновлении профиля произошла ошибка.</span>
+                <span className="profile__error">При обновлении профиля произошла ошибка.</span>
                 <button className="profile__form-button log__form-button medium-font_size_medium" type="submit">Сохранить</button>
               </>
             )}

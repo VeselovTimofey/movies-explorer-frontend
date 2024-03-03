@@ -9,7 +9,7 @@ class MoviesCardList extends React.Component {
       <>
         <section className="movies__list" aria-label="Карточки фильмов.">
           {this.props.cards.data.map((cardInfo, i) => (
-            <MoviesCard cardInfo={cardInfo} isMyMovies={this.props.isMyMovies} />
+            <MoviesCard cardInfo={cardInfo} isMyMovies={this.props.isMyMovies} key={cardInfo.name} />
           ))}
         </section>
         <img className="movies__preloader" src={preloader} alt="Загрузка." />

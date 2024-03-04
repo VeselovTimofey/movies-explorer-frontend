@@ -13,59 +13,60 @@
   width: 100%;
 }
 
-.medium-font_size_big {
+.medium-font {
   font-weight: 500;
+}
+
+.medium-font_size_big {
   font-size: 24px;
   line-height: 29.05px;
 }
 
 .medium-font_size_medium {
-  font-weight: 500;
   font-size: 14px;
   line-height: 16.94px;
 }
 
 .medium-font_size_small {
-  font-weight: 500;
   font-size: 13px;
   line-height: 15.73px;
 }
 
 .medium-font_size_tiny {
-  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
 }
 
-.reqular-font_size_huge {
+.reqular-font {
   font-weight: 400;
+}
+
+.reqular-font_size_huge {
   font-size: 50px;
   line-height: 58px;
 }
 
 .reqular-font_size_big {
-  font-weight: 400;
   font-size: 22px;
   line-height: 26.63px;
 }
 
 .reqular-font_size_medium {
-  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
 }
 
 .reqular-font_size_small {
-  font-weight: 400;
   font-size: 14px;
   line-height: 16.94px;
 }
 
 .reqular-font_size_tiny {
-  font-weight: 400;
   font-size: 13px;
   line-height: 15.73px;
 }
+
+.section {}
 
 .section__title {
   height: 50px;

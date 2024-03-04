@@ -19,7 +19,7 @@ class MoviesCard extends React.Component {
         <Link to="/movies" className="movies-card__link-image">
           <img className="movies-card__image" src={this.props.cardInfo.image} alt={this.props.cardInfo.name} />
         </Link>
-        <h2 className="movies-card__name medium-font_size_small">{this.props.cardInfo.name}</h2>
+        <h2 className="movies-card__name medium-font medium-font_size_small">{this.props.cardInfo.name}</h2>
         <p className="movies-card__time">{this.props.cardInfo.duration}</p>
       </article>
     )

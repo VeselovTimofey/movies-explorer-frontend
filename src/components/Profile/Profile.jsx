@@ -22,8 +22,8 @@ class Profile extends React.Component {
     return (
       <>
         <Header />
-        <main className="profile">
-          <h1 className="profile__title medium-font_size_big">Привет, Виталий!</h1>
+        <main className="profile log">
+          <h1 className="profile__title medium-font medium-font_size_big">Привет, Виталий!</h1>
           <form className="profile__info">
             <h2 className="profile__subtitle">Имя</h2>
             {(!this.state.isRedaction) && (
@@ -43,16 +43,16 @@ class Profile extends React.Component {
           </form>
             {(!this.state.isRedaction) && (
               <>
-                <button onClick={this.handleRedactionClick} className="profile__button profile__button_color_white reqular-font_size_tiny">Редактировать</button>
+                <button onClick={this.handleRedactionClick} className="profile__button profile__button_color_white reqular-font reqular-font_size_tiny">Редактировать</button>
                 <Link to="/">
-                  <button className="profile__button profile__button_color_red medium-font_size_small">Выйти из аккаунта</button>
+                  <button className="profile__button profile__button_color_red medium-font medium-font_size_small">Выйти из аккаунта</button>
                 </Link>
               </>
             )}
             {(this.state.isRedaction) && (
               <>
                 <span className="profile__error">При обновлении профиля произошла ошибка.</span>
-                <button className="profile__form-button log__form-button medium-font_size_medium" type="submit">Сохранить</button>
+                <button className="profile__form-button log__form-button medium-font medium-font_size_medium" type="submit">Сохранить</button>
               </>
             )}
         </main>

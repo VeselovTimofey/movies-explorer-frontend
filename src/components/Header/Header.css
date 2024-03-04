@@ -130,7 +130,7 @@
     margin: 592px 0 0 0;
   }
 
-  .header__link_underline {
+  .header__nav-link_underline {
     text-decoration: underline;
     text-underline-offset: 8px;
     text-decoration-thickness: 2px;
@@ -172,7 +172,7 @@
     margin: 2px 16px 73px 0;
   }
 
-  .header__link_underline {
+  .header__nav-link_underline {
     text-underline-offset: 11px;
   }
 

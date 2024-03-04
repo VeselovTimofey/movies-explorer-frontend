@@ -5,6 +5,11 @@
   gap: 40px;
 }
 
+.small-header__logo {
+  height: 38px;
+  width: 38px;
+}
+
 .small-header__title {
   margin: 0;
   letter-spacing: 0em;

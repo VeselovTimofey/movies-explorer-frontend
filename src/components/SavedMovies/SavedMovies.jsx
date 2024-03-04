@@ -11,7 +11,7 @@ class SavedMovies extends React.Component {
     return (
       <>
         <Header />
-        <main className="saved-movies">
+        <main className="movies">
           <SearchForm />
           <MoviesCardList cards={cards} isMyMovies={true} />
         </main>

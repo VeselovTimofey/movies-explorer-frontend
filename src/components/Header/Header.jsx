@@ -28,7 +28,7 @@ class Header extends React.Component {
         </Link>
         {(!this.state.isLogin) && (
           <>
-            <Link to="/signup" className="header__link header__link_type_registration medium-font_size_tiny">Регистрация</Link>
+            <Link to="/signup" className="header__link header__link_type_registration medium-font medium-font_size_tiny">Регистрация</Link>
             <Link to="/signin" className="header__link header__link_type_login">Войти</Link>
           </>
         )}
@@ -40,7 +40,7 @@ class Header extends React.Component {
             <nav className={this.state.isNavOpen ? "header__nav header__popup_inline" : "header__nav"}>
               <button onClick={this.handleNavClick} className="header__nav-close header__popup-element">&#215;</button>
               <Link to="/" className="header__nav-link header__popup-element">Главная</Link>
-              <Link to="/movies" className="header__nav-link header__link_underline">Фильмы</Link>
+              <Link to="/movies" className="header__nav-link header__nav-link_underline">Фильмы</Link>
               <Link to="/saved-movies" className="header__nav-link">Сохранённые фильмы</Link>
               <Link to="/profile" className="header__link header__link_type_account">Аккаунт</Link>
             </nav>

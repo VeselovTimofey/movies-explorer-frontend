@@ -28,10 +28,14 @@
 
 .not-found__link {
   margin-top: 179px;
+  padding: 0;
+  border: none;
   letter-spacing: 0em;
   text-align: center;
   text-decoration: none;
   color: #4285F4;
+  background: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 880px) {

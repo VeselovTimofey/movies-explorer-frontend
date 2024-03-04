@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Header from '../Header/Header';
 
@@ -43,7 +44,9 @@ class Profile extends React.Component {
             {(!this.state.isRedaction) && (
               <>
                 <button onClick={this.handleRedactionClick} className="profile__button profile__button_color_white reqular-font_size_tiny">Редактировать</button>
-                <button className="profile__button profile__button_color_red medium-font_size_small">Выйти из аккаунта</button>
+                <Link to="/">
+                  <button className="profile__button profile__button_color_red medium-font_size_small">Выйти из аккаунта</button>
+                </Link>
               </>
             )}
             {(this.state.isRedaction) && (

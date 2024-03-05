@@ -40,8 +40,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  letter-spacing: 0em;
-  text-align: center;
 }
 
 .time-line__front-end {
@@ -50,9 +48,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #FFFFFF;
+}
+
+.time-line__paragraph {
+  margin: 0;
   letter-spacing: 0em;
   text-align: center;
-  color: #FFFFFF;
 }
 
 .time-line__description {
@@ -108,12 +110,13 @@
 
   .time-line__back-end {
     height: 35px;
-    font-size: 11px;
-    line-height: 13px;
   }
 
   .time-line__front-end {
     height: 35px;
+  }
+
+  .time-line__paragraph {
     font-size: 11px;
     line-height: 13px;
   }

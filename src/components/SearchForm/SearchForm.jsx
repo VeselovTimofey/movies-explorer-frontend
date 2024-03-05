@@ -7,10 +7,12 @@ class SearchForm extends React.Component {
     return (
       <section className="search" aria-label="Фильтрация фильмов.">
         <form className="search__form">
-          <input className="search__input" type="text" placeholder="Фильм" name="movie" required />
-          <button className="search__button" type="submit"></button>
+          <div className="search__fild">
+            <input className="search__input" type="text" placeholder="Фильм" name="movie" required />
+            <button className="search__button" type="submit"></button>
+          </div>
+          <FilterCheckbox />
         </form>
-        <FilterCheckbox />
       </section>
     )
   }

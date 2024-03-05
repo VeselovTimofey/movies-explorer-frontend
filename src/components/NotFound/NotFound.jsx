@@ -5,11 +5,13 @@ function NotFound(props) {
   const navigate = useNavigate();
   
   return (
-    <section className="not-found">
-      <h1 className="not-found__title">404</h1>
-      <p className="not-found__paragraph">Страница не найдена</p>
-      <button onClick={() => {navigate(-1)}} className="not-found__link reqular-font_size_small">Назад</button>
-    </section>
+    <main className="content">
+      <section className="not-found">
+        <h1 className="not-found__title">404</h1>
+        <p className="not-found__paragraph">Страница не найдена</p>
+        <button onClick={() => {navigate(-1)}} className="not-found__link reqular-font_size_small" type="button">Назад</button>
+      </section>
+    </main>
   )
 }
 

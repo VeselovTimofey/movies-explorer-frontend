@@ -8,13 +8,15 @@ class Login extends React.Component {
     return (
       <section className="login">
         <SmallHeader headerTitle="Рады видеть!" />
-        <LogForm
-          formButton="Войти"
-          bottomParagraph="Ещё не зарегистрированы?"
-          bottomLink="/signup"
-          bottomLinkName="Регистрация"
-          isName={false}
-        />
+        <main className="content">
+          <LogForm
+            formButton="Войти"
+            bottomParagraph="Ещё не зарегистрированы?"
+            bottomLink="/signup"
+            bottomLinkName="Регистрация"
+            isName={false}
+          />
+        </main>
       </section>
     )
   }

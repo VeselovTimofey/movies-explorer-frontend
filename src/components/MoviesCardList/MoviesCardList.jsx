@@ -14,7 +14,7 @@ class MoviesCardList extends React.Component {
         </section>
         <img className="movies__preloader" src={preloader} alt="Загрузка." />
         {(!this.props.isMyMovies) &&
-        (<button className="movies__button">Ещё</button>)}
+        (<button className="movies__button" type="button">Ещё</button>)}
         {(this.props.isMyMovies) && 
         (<div className="movies__space" />)}
       </>

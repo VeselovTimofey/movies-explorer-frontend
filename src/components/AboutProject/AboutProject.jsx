@@ -14,8 +14,12 @@ class AboutProject extends React.Component {
           <p className="section__paragraph reqular-font reqular-font_size_medium">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
         </section>
         <section className="time-line" aria-label="График выполнения.">
-          <div className="time-line__back-end reqular-font reqular-font_size_small">1 неделя</div>
-          <div className="time-line__front-end reqular-font reqular-font_size_small">4 недели</div>
+          <div className="time-line__back-end">
+            <p className="time-line__paragraph reqular-font reqular-font_size_small">1 неделя</p>
+          </div>
+          <div className="time-line__front-end">
+            <p className="time-line__paragraph reqular-font reqular-font_size_small">4 недели</p>
+          </div>
           <p className="time-line__description">Back-end</p>
           <p className="time-line__description">Front-end</p>
         </section>

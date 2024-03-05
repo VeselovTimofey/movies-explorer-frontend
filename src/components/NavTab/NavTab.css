@@ -1,7 +1,13 @@
 .navtab {
+  margin-bottom: 30px;
+}
+
+.navtab__list {
+  margin: 0;
+  padding: 0;
   display: flex;
   gap: 10px;
-  margin-bottom: 30px;
+  list-style-type: none;
 }
 
 .navtab__link {
@@ -20,8 +26,11 @@
 
 @media screen and (max-width: 755px) {
   .navtab {
-    gap: 6px;
     margin-bottom: 17px;
+  }
+
+  .navtab__list {
+    gap: 6px;
   }
   
   .navtab__link {

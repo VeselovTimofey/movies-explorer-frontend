@@ -8,13 +8,15 @@ class Register extends React.Component {
     return (
       <section className="register">
         <SmallHeader headerTitle="Добро пожаловать!" />
-        <LogForm 
-          formButton="Зарегистрироваться"
-          bottomParagraph="Уже зарегистрированы?"
-          bottomLink="/signin"
-          bottomLinkName="Войти"
-          isName={true}
-        />
+        <main className="content">
+          <LogForm 
+            formButton="Зарегистрироваться"
+            bottomParagraph="Уже зарегистрированы?"
+            bottomLink="/signin"
+            bottomLinkName="Войти"
+            isName={true}
+          />
+        </main>
       </section>
     );
   }

@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+.not-found__link:hover {
+  opacity: 70%;
+}
+
 @media screen and (max-width: 880px) {
   .not-found {
     margin-top: 408px;

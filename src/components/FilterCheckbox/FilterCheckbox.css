@@ -60,6 +60,10 @@
   color: #FFFFFF; 
 }
 
+.filter:hover .filter__label {
+  opacity: 70%;
+}
+
 @media screen and (max-width: 755px) {
   .filter {
     gap: 14px;

@@ -21,7 +21,7 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <Header pageName="Profile" />
         <main className="content">
           <section className="profile log">
             <h1 className="profile__title medium-font medium-font_size_big">Привет, Виталий!</h1>

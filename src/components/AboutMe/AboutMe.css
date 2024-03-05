@@ -36,6 +36,10 @@
   text-decoration: none;
 }
 
+.about-me__link:hover {
+  opacity: 70%;
+}
+
 .about-me__img {
   height: 327px;
   width: 270px;

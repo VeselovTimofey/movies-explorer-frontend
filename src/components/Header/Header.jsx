@@ -39,10 +39,10 @@ class Header extends React.Component {
             </button>
             <nav className={this.state.isNavOpen ? "header__nav header__popup_inline" : "header__nav"}>
               <button type="button" onClick={this.handleNavClick} className="header__nav-close header__popup-element">&#215;</button>
-              <Link to="/" className="header__nav-link header__popup-element">Главная</Link>
-              <Link to="/movies" className="header__nav-link header__nav-link_underline">Фильмы</Link>
-              <Link to="/saved-movies" className="header__nav-link">Сохранённые фильмы</Link>
-              <Link to="/profile" className="header__link header__link_type_account">Аккаунт</Link>
+              <Link to="/" className={this.props.pageName == "Main" ? "header__nav-link header__popup-element header__nav-link_underline" : "header__nav-link header__popup-element"}>Главная</Link>
+              <Link to="/movies" className={this.props.pageName == "Movies" ? "header__nav-link header__nav-link_underline" : "header__nav-link"}>Фильмы</Link>
+              <Link to="/saved-movies" className={this.props.pageName == "SavedMovies" ? "header__nav-link header__nav-link_underline" : "header__nav-link"}>Сохранённые фильмы</Link>
+              <Link to="/profile" className={this.props.pageName == "Profile" ? "header__link header__link_type_account header__nav-link_underline" : "header__link header__link_type_account"}>Аккаунт</Link>
             </nav>
           </>
         )}

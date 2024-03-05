@@ -69,8 +69,16 @@
   text-align: center;
 }
 
+.profile__button:hover {
+  opacity: 70%;
+}
+
 .profile__form-button {
   width: 410px;
+}
+
+.profile__form-button:hover {
+  opacity: 80%;
 }
 
 .profile__button_color_white {

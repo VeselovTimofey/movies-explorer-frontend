@@ -10,6 +10,10 @@
   width: 38px;
 }
 
+.small-header__logo:hover {
+  opacity: 70%;
+}
+
 .small-header__title {
   margin: 0;
   letter-spacing: 0em;

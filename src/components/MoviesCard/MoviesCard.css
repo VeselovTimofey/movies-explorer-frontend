@@ -16,7 +16,6 @@
 
 .movies-card__save {
   visibility: hidden;
-  opacity: 0;
   transition: visibility 0.3s linear, opacity 0.3s linear;
   height: 21px;
   width: 72px;
@@ -30,11 +29,15 @@
   text-align: center;
   color: #FFFFFF;
   background-color: #313131;
+  cursor: pointer;
 }
 
 .movies-card:hover .movies-card__save {
   visibility: visible;
-  opacity: 1;
+}
+
+.movies-card__save:hover {
+  opacity: 70%;
 }
 
 .movies-card__check {
@@ -45,6 +48,7 @@
   border-radius: 30px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .movies-card__check_color_pink {

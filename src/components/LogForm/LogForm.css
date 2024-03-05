@@ -56,6 +56,10 @@
   cursor: pointer;
 }
 
+.log__form-button:hover {
+  opacity: 80%;
+}
+
 .log__bottom {
   margin-top: 16px;
   align-self: center;
@@ -76,6 +80,10 @@
   text-align: center;
   text-decoration: none;
   color: #4285F4;    
+}
+
+.log__link:hover {
+  opacity: 70%;
 }
 
 @media screen and (max-width: 755px) {

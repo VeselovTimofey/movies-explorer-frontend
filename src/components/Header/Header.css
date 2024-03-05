@@ -11,6 +11,10 @@
   width: 38px;
 }
 
+.header__logo:hover {
+  opacity: 70%;
+}
+
 .header__nav {
   width: 59.2%;
   margin-left: auto;
@@ -37,10 +41,18 @@
   text-decoration: none;
 }
 
+.header__nav-link:hover {
+  opacity: 70%;
+}
+
 .header__link {
   letter-spacing: 0px;
   text-align: right;
   text-decoration: none;
+}
+
+.header__link:hover {
+  opacity: 70%;
 }
 
 .header__link_type_registration {
@@ -75,6 +87,12 @@
   border-radius: 20px;
 }
 
+.header__nav-link_underline {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+
 @media screen and (max-width: 880px) {
   .header {
     margin: 0 30px;
@@ -89,6 +107,10 @@
     padding: 0;
     background-color: #202020;
     cursor: pointer;
+  }
+
+  .header__button-open:hover {
+    opacity: 70%;
   }
 
   .header__popup-element {
@@ -119,6 +141,10 @@
     cursor: pointer;
   }
 
+  .header__nav-close:hover {
+    opacity: 70%;
+  }
+
   .header__nav-link {
     font-weight: 500;
     font-size: 18px;
@@ -128,12 +154,6 @@
 
   .header__link_type_account {
     margin: 592px 0 0 0;
-  }
-
-  .header__nav-link_underline {
-    text-decoration: underline;
-    text-underline-offset: 8px;
-    text-decoration-thickness: 2px;
   }
 
   .header__button-open {

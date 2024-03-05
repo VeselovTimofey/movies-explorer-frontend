@@ -43,6 +43,10 @@
   background-color: #202020;
 }
 
+.search__button:hover {
+  opacity: 70%;
+}
+
 @media screen and (max-width: 880px) {
   .search__form {
     gap: 40px;

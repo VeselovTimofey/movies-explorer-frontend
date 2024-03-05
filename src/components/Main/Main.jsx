@@ -12,7 +12,7 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <Header pageName="Main" />
         <main className="content">
           <Promo />
           <AboutProject />

@@ -35,6 +35,10 @@
   text-decoration: none;
 }
 
+.footer__link:hover {
+  opacity: 70%;
+}
+
 @media screen and (max-width: 880px) {
   .footer {
     margin: 25px 30px 20px 30px;

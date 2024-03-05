@@ -24,11 +24,14 @@
   padding: 0 0 0 15px;
   border-radius: 8px;
   border: none;
-  outline: none;
   letter-spacing: 0em;
   text-align: left;
   color: #FFFFFF;
   background-color: #2F2F2F;
+}
+
+.log__form-input:focus {
+  outline: 1px solid #3DDC84;
 }
 
 .log__form-error {

@@ -32,7 +32,7 @@ class Profile extends React.Component {
                   <p className="profile__data">Виталий</p> 
                 )}
                 {(this.state.isRedaction) && (
-                  <input className="profile__data profile__input" type="text" id="username" defaultValue="Виталий" />
+                  <input className="profile__data profile__input" type="text" id="username" placeholder="Имя" defaultValue="Виталий" minLength={2} maxLength={30} />
                 )}
                 <div className="profile__line" />
                 <h2 className="profile__subtitle">E-mail</h2>
@@ -40,7 +40,7 @@ class Profile extends React.Component {
                   <p className="profile__data">pochta@yandex.ru</p>
                 )}
                 {(this.state.isRedaction) && (
-                  <input className="profile__data profile__input" type="email" id="useremail" defaultValue="pochta@yandex.ru" />
+                  <input className="profile__data profile__input" type="email" id="useremail" placeholder="Почта" defaultValue="pochta@yandex.ru" minLength={2} maxLength={30} />
                 )}
               </section>
               {(this.state.isRedaction) && (

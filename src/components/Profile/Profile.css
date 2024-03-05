@@ -50,8 +50,11 @@
   height: 13px;
   padding: 0;
   border: none;
-  outline: none;
   background-color: #202020;
+}
+
+.profile__input:focus {
+  outline: 1px solid #3DDC84;
 }
 
 .profile__line {

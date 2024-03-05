@@ -117,6 +117,16 @@
     display: inline;
   }
 
+  .header__cover {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
   .header__nav {
     display: none;
     width: 520px;
@@ -124,7 +134,7 @@
     position: fixed;
     top: 0px;
     right: 0px;
-    z-index: 2;
+    z-index: 3;
     flex-direction: column;
     gap: 28px;
     background-color: #202020;
@@ -201,6 +211,6 @@
   }
 }
 
-.header__popup_inline {
+.header__nav_inline {
   display: flex;
 }

@@ -35,18 +35,11 @@
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
-  letter-spacing: 0em;
-  text-align: right;
   color: #FFFFFF;
-  text-decoration: none;
-}
-
-.header__nav-link:hover {
-  opacity: 70%;
 }
 
 .header__link {
-  letter-spacing: 0px;
+  letter-spacing: 0em;
   text-align: right;
   text-decoration: none;
 }
@@ -87,7 +80,7 @@
   border-radius: 20px;
 }
 
-.header__nav-link_underline {
+.header__link_underline {
   text-decoration: underline;
   text-underline-offset: 8px;
   text-decoration-thickness: 2px;

@@ -1,0 +1,108 @@
+.page {
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #202020;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.medium-font {
+  font-weight: 500;
+}
+
+.medium-font_size_big {
+  font-size: 24px;
+  line-height: 29.05px;
+}
+
+.medium-font_size_medium {
+  font-size: 14px;
+  line-height: 16.94px;
+}
+
+.medium-font_size_small {
+  font-size: 13px;
+  line-height: 15.73px;
+}
+
+.medium-font_size_tiny {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.reqular-font {
+  font-weight: 400;
+}
+
+.reqular-font_size_huge {
+  font-size: 50px;
+  line-height: 58px;
+}
+
+.reqular-font_size_big {
+  font-size: 22px;
+  line-height: 26.63px;
+}
+
+.reqular-font_size_medium {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.reqular-font_size_small {
+  font-size: 14px;
+  line-height: 16.94px;
+}
+
+.reqular-font_size_tiny {
+  font-size: 13px;
+  line-height: 15.73px;
+}
+
+.section {}
+
+.section__title {
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  border-bottom: 1px solid #DADADA;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+}
+
+.section__subtitle {
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+}
+
+.section__paragraph {
+  margin: 0;
+  letter-spacing: 0em;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 880px) {
+  .reqular-font_size_medium {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 755px) {
+  .section__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .section__paragraph {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

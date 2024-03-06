@@ -6,7 +6,7 @@ import LogForm from '../LogForm/LogForm';
 class Register extends React.Component {
   render() {
     return (
-      <section className="register">
+      <div className="register">
         <SmallHeader headerTitle="Добро пожаловать!" />
         <main className="content">
           <LogForm 
@@ -17,7 +17,7 @@ class Register extends React.Component {
             isName={true}
           />
         </main>
-      </section>
+      </div>
     );
   }
 }

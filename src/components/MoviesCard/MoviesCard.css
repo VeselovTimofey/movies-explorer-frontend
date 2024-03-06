@@ -116,7 +116,7 @@
   background-color: #2F2F2F;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 890px) {
   .movies-card {
     row-gap: 25px;
   }
@@ -139,7 +139,7 @@
   }
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 767px) {
   .movies-card {
     row-gap: 16px;
   }

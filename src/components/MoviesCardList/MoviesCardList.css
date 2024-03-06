@@ -53,7 +53,7 @@
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 890px) {
   .movies__list {
     grid-template-columns: repeat(auto-fit, 339px);
     row-gap: 44px;
@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 767px) {
   .movies__list {
     margin-top: 40px;
     grid-template-columns: repeat(auto-fit, 300px);

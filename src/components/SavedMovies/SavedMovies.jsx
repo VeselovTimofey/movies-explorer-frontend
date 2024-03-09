@@ -10,7 +10,10 @@ class SavedMovies extends React.Component {
   render() {
     return (
       <>
-        <Header pageName="SavedMovies" />
+        <Header
+          pageName="SavedMovies"
+          isLoggedIn="true"  
+        />
         <main className="movies">
           <SearchForm />
           <MoviesCardList cards={cards} isMyMovies={true} />

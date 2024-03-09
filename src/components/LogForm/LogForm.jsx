@@ -5,20 +5,20 @@ class LogForm extends React.Component {
   render() {
     return (
       <section className="log" aria-label="Форма входа или регистрации.">
-        <form className="log__form">
+        <form className="log__form" onSubmit={this.props.onSubmit}>
           {(this.props.isName) && (
             <>
               <label className="log__form-label" htmlFor="username">Имя</label>
-              <input className="log__form-input reqular-font reqular-font_size_tiny" type="text" id="username" placeholder="Имя" minLength={2} maxLength={30} required />
+              <input className="log__form-input reqular-font reqular-font_size_tiny" type="text" name="username" placeholder="Имя" value={this.props.valueUserName} onChange={this.props.onChange} minLength={2} maxLength={30} required />
               <span className="log__form-error"></span>
             </>
           )}
           <label className="log__form-label" htmlFor="useremail">E-mail</label>
-          <input className="log__form-input reqular-font reqular-font_size_tiny" type="email" id="useremail" placeholder="Почта" minLength={2} maxLength={30} required />
+          <input className="log__form-input reqular-font reqular-font_size_tiny" type="email" name="email" placeholder="Почта" value={this.props.valueEmail} onChange={this.props.onChange} minLength={2} maxLength={30} required />
           <span className="log__form-error"></span>
           <label className="log__form-label" htmlFor="userpassword">Пароль</label>
-          <input className="log__form-input reqular-font reqular-font_size_tiny" type="password" id="userpassword" placeholder="Пароль" minLength={2} maxLength={30} required />
-          <span className="log__form-error">Что-то пошло не так...</span>
+          <input className="log__form-input reqular-font reqular-font_size_tiny" type="password" name="password" placeholder="Пароль" value={this.props.valuePassword} onChange={this.props.onChange} minLength={2} maxLength={30} required />
+          <span className="log__form-error"></span>
           <button className="log__form-button medium-font medium-font_size_medium" type="submit">{this.props.formButton}</button>
         </form>
         <div className="log__bottom">

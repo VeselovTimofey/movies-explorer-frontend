@@ -1,9 +1,10 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 const ProtectedRouteElement = ({element: Component, ...props}) => {
   return(
-    props.isLoggedIn ? <Component {...props} /> : <Navigate to="/signin" replace/>
+    Cookies.get("isLoggedIn") ? <Component {...props} /> : <Navigate to="/signin" replace/>
   )
 }
 

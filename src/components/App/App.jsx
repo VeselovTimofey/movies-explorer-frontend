@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import '../../index.css';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
@@ -26,6 +27,17 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    console.log(window.innerWidth)
+    if (Cookies.get("isLoggedIn")) {
+      mainApi.authentication()
+        .then((data) => {
+          this.setState({currentUser: data.data, isLoggedIn: true})
+        })
+        .catch(console.error)
+    }
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state.isLoggedIn === true && prevState.isLoggedIn === false) {
       this.authenticationUser();
@@ -35,6 +47,7 @@ class App extends React.Component {
   handleAuthorizationUser(dataUser) {
     mainApi.signin(dataUser)
       .then(() => {
+        Cookies.set("isLoggedIn", true);
         this.setState({isLoggedIn: true,});
         this.props.router.navigate("/movies");
       })
@@ -60,6 +73,7 @@ class App extends React.Component {
   handleSignOut() {
     mainApi.signout()
       .then(() => {
+        Cookies.remove("isLoggedIn");
         this.setState({
           isLoggedIn: false,
           currentUser: {},

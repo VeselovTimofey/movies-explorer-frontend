@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Header from '../Header/Header';
-import cards from '../../vendor/my-cards.json';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';

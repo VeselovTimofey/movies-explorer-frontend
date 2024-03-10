@@ -9,6 +9,7 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import mainApi from '../../utils/MainApi';
+import ProtectedRouteElement from '../../utils/ProtectedRoute';
 import withRouter from '../../utils/WithRouter';
 import CurrentUserContext from '../../context/CurrentUserContext';
 
@@ -91,9 +92,17 @@ class App extends React.Component {
           <Route path="/" element={<Main
             isLoggedIn={this.state.isLoggedIn}
           />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/saved-movies" element={<SavedMovies />} />
-          <Route path="/profile" element={<Profile
+          <Route path="/movies" element={<ProtectedRouteElement
+            element={Movies}
+            isLoggedIn={this.state.isLoggedIn}
+          />} />
+          <Route path="/saved-movies" element={<ProtectedRouteElement
+            element={SavedMovies}
+            isLoggedIn={this.state.isLoggedIn}
+          />} />
+          <Route path="/profile" element={<ProtectedRouteElement
+            element={Profile}
+            isLoggedIn={this.state.isLoggedIn}
             onSignOut={this.handleSignOut.bind(this)}
             onPatchUserInfo={this.handlePatchUserInfo.bind(this)}
           />} />

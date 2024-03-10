@@ -7,6 +7,10 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 
 class Movies extends React.Component {
+  componentDidMount() {
+    this.props.getMoviesCards();
+  }
+
   render() {
     return (
       <>
@@ -16,7 +20,11 @@ class Movies extends React.Component {
         />
         <main className="movies">
           <SearchForm />
-          <MoviesCardList cards={cards} isMyMovies={false} />
+          <MoviesCardList
+            cards={this.props.allMoviesCards}
+            isMyMovies={false}
+            isMoviesLoaded={this.props.isMoviesLoaded}
+          />
         </main>
         <Footer />
       </>

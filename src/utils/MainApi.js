@@ -1,7 +1,6 @@
 class Api {
-  constructor(baseUrl, token) {
+  constructor(baseUrl) {
     this._baseUrl = baseUrl;
-    this._token = token;
   }
 
   _getResponseData(res) {
@@ -14,7 +13,10 @@ class Api {
   signup(newUser) {
     return fetch(this._baseUrl + '/signup', {
       method: 'POST',
-      headers: this._token,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         email: newUser.email,
         password: newUser.password,
@@ -82,9 +84,6 @@ class Api {
   }
 }
 
-const mainApi = new Api('https://api.veselov.diplom.nomoredomainsmonster.ru', {
-  'Accept': 'application/json',
-  'Content-Type': 'application/json'
-})
+const mainApi = new Api('https://api.veselov.diplom.nomoredomainsmonster.ru')
 
 export default mainApi;

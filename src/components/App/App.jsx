@@ -9,6 +9,7 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import mainApi from '../../utils/MainApi';
+import moviesApi from '../../utils/MoviesApi';
 import ProtectedRouteElement from '../../utils/ProtectedRoute';
 import withRouter from '../../utils/WithRouter';
 import CurrentUserContext from '../../context/CurrentUserContext';
@@ -19,11 +20,9 @@ class App extends React.Component {
     this.state = {
       isLoggedIn: false,
       currentUser: {},
+      allMoviesCards: [],
+      isMoviesLoaded: false,
     }
-  }
-
-  componentDidMount() {
-    this.authenticationUser();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -35,9 +34,7 @@ class App extends React.Component {
   handleAuthorizationUser(dataUser) {
     mainApi.signin(dataUser)
       .then(() => {
-        this.setState({
-          isLoggedIn: true,
-        });
+        this.setState({isLoggedIn: true,});
         this.props.router.navigate("/movies");
       })
       .catch(console.error)
@@ -47,9 +44,7 @@ class App extends React.Component {
     if (this.state.isLoggedIn) {
       mainApi.authentication()
         .then((data) => {
-          this.setState({
-            currentUser: data.data,
-          })
+          this.setState({currentUser: data.data,})
         })
         .catch(console.error)
     }
@@ -57,9 +52,7 @@ class App extends React.Component {
 
   handleRegister(newUser) {
     mainApi.signup(newUser)
-      .then(() => {
-        this.handleAuthorizationUser(newUser)
-      })
+      .then(() => {this.handleAuthorizationUser(newUser)})
       .catch(console.error)
   }
 
@@ -78,8 +71,17 @@ class App extends React.Component {
   handlePatchUserInfo(newDataUser) {
     mainApi.patchUserInfo(newDataUser)
       .then((data) => {
+        this.setState({currentUser: data.data})
+      })
+      .catch(console.error)
+  }
+
+  getMoviesCards() {
+    moviesApi.getMovies()
+      .then((data) => {
         this.setState({
-          currentUser: data.data
+          allMoviesCards: data,
+          isMoviesLoaded: true,
         })
       })
       .catch(console.error)
@@ -95,6 +97,9 @@ class App extends React.Component {
           <Route path="/movies" element={<ProtectedRouteElement
             element={Movies}
             isLoggedIn={this.state.isLoggedIn}
+            getMoviesCards={this.getMoviesCards.bind(this)}
+            allMoviesCards={this.state.allMoviesCards}
+            isMoviesLoaded={this.state.isMoviesLoaded}
           />} />
           <Route path="/saved-movies" element={<ProtectedRouteElement
             element={SavedMovies}

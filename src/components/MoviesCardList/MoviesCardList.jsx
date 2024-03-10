@@ -8,11 +8,11 @@ class MoviesCardList extends React.Component {
     return (
       <>
         <section className="movies__list" aria-label="Карточки фильмов.">
-          {this.props.cards.data.map((cardInfo, i) => (
-            <MoviesCard cardInfo={cardInfo} isMyMovies={this.props.isMyMovies} key={cardInfo.name} />
+          {this.props.cards.map((cardInfo, i) => (
+            <MoviesCard key={cardInfo.id} cardInfo={cardInfo} isMyMovies={this.props.isMyMovies} />
           ))}
         </section>
-        <img className="movies__preloader" src={preloader} alt="Загрузка." />
+        <img className={(this.props.isMoviesLoaded) ? "movies__preloader" : "movies__preloader movies__preloader_active"} src={preloader} alt="Загрузка." />
         {(!this.props.isMyMovies) &&
         (<button className="movies__button" type="button">Ещё</button>)}
         {(this.props.isMyMovies) && 

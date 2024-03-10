@@ -16,6 +16,10 @@
   animation: move 1s linear infinite;
 }
 
+.movies__preloader_active {
+  display: block;
+}
+
 .movies__button {
   height: 36px;
   width: 320px;

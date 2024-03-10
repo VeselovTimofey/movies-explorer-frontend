@@ -16,11 +16,11 @@ class MoviesCard extends React.Component {
             </button>
           )}
         </div>
-        <Link to="/movies" className="movies-card__link-image">
-          <img className="movies-card__image" src={this.props.cardInfo.image} alt={this.props.cardInfo.name} />
-        </Link>
-        <h2 className="movies-card__name medium-font medium-font_size_small">{this.props.cardInfo.name}</h2>
-        <p className="movies-card__time">{this.props.cardInfo.duration}</p>
+        <a href={this.props.cardInfo.trailerLink} target="_blank" className="movies-card__link-image">
+          <img className="movies-card__image" src={"https://api.nomoreparties.co" + this.props.cardInfo.image.url} alt={this.props.cardInfo.image.name} />
+        </a>
+        <h2 className="movies-card__name medium-font medium-font_size_small">{this.props.cardInfo.nameRU}</h2>
+        <p className="movies-card__time">{this.props.cardInfo.duration} м</p>
       </article>
     )
   }

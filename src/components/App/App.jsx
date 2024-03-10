@@ -21,6 +21,7 @@ class App extends React.Component {
       isLoggedIn: false,
       currentUser: {},
       allMoviesCards: [],
+      myMoviesCards: [],
       isMoviesLoaded: false,
     }
   }
@@ -79,10 +80,24 @@ class App extends React.Component {
   getMoviesCards() {
     moviesApi.getMovies()
       .then((data) => {
+        data.forEach(cardInfo => {
+          cardInfo.thumbnail = "https://api.nomoreparties.co" + cardInfo.image.formats.thumbnail.url
+          cardInfo.image = "https://api.nomoreparties.co" + cardInfo.image.url
+        });
         this.setState({
           allMoviesCards: data,
           isMoviesLoaded: true,
         })
+      })
+      .catch(console.error)
+  }
+
+  handleSaveMoviesCards(newCards) {
+    mainApi.postMovie(newCards)
+      .then((data) => {
+        this.setState((prevState) => ({
+          ...prevState, myMoviesCards: [...prevState.myMoviesCards, data.data]
+        }))
       })
       .catch(console.error)
   }
@@ -100,10 +115,12 @@ class App extends React.Component {
             getMoviesCards={this.getMoviesCards.bind(this)}
             allMoviesCards={this.state.allMoviesCards}
             isMoviesLoaded={this.state.isMoviesLoaded}
+            onSaveMoviesCards={this.handleSaveMoviesCards.bind(this)}
           />} />
           <Route path="/saved-movies" element={<ProtectedRouteElement
             element={SavedMovies}
             isLoggedIn={this.state.isLoggedIn}
+            myMoviesCards={this.state.myMoviesCards}
           />} />
           <Route path="/profile" element={<ProtectedRouteElement
             element={Profile}

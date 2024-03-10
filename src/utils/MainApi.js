@@ -11,11 +11,11 @@ class Api {
   }
 
   signup(newUser) {
-    return fetch(this._baseUrl + '/signup', {
-      method: 'POST',
+    return fetch(this._baseUrl + "/signup", {
+      method: "POST",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         email: newUser.email,
@@ -29,9 +29,9 @@ class Api {
   }
 
   signin(user) {
-    return fetch(this._baseUrl + '/signin', {
-      method: 'POST',
-      credentials: 'include',
+    return fetch(this._baseUrl + "/signin", {
+      method: "POST",
+      credentials: "include",
       secure: true,
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
@@ -45,9 +45,9 @@ class Api {
   }
 
   authentication() {
-    return fetch(this._baseUrl + '/users/me', {
-      method: 'GET',
-      credentials: 'include',
+    return fetch(this._baseUrl + "/users/me", {
+      method: "GET",
+      credentials: "include",
       headers: {"Content-Type": "application/json"},
     })
     .then((response) => {
@@ -56,9 +56,9 @@ class Api {
   }
 
   signout() {
-    return fetch(this._baseUrl + '/signout', {
-      method: 'POST',
-      credentials: 'include',
+    return fetch(this._baseUrl + "/signout", {
+      method: "POST",
+      credentials: "include",
       headers: {"Content-Type": "application/json"},
     })
     .then((res) => {
@@ -69,14 +69,26 @@ class Api {
   }
 
   patchUserInfo(newDataUser) {
-    return fetch(this._baseUrl + '/users/me', {
-      method: 'PATCH',
-      credentials: 'include',
+    return fetch(this._baseUrl + "/users/me", {
+      method: "PATCH",
+      credentials: "include",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
         email: newDataUser.email,
         name: newDataUser.name,
       })
+    })
+    .then((response) => {
+      return this._getResponseData(response)
+    })
+  }
+
+  postMovie(newMovie) {
+    return fetch(this._baseUrl + "/movies", {
+      method: "POST",
+      credentials: "include",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newMovie)
     })
     .then((response) => {
       return this._getResponseData(response)

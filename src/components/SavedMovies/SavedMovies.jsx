@@ -16,7 +16,10 @@ class SavedMovies extends React.Component {
         />
         <main className="movies">
           <SearchForm />
-          <MoviesCardList cards={cards} isMyMovies={true} />
+          <MoviesCardList
+            cards={this.props.myMoviesCards}
+            isMyMovies={true}  
+          />
         </main>
         <Footer />
       </>

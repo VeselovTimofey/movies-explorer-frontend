@@ -24,6 +24,7 @@ class Movies extends React.Component {
             cards={this.props.allMoviesCards}
             isMyMovies={false}
             isMoviesLoaded={this.props.isMoviesLoaded}
+            onSaveMoviesCards={this.props.onSaveMoviesCards}
           />
         </main>
         <Footer />

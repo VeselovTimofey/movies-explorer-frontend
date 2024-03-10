@@ -1,4 +1,5 @@
 import React from 'react';
+import changeAndValidationForm from '../../utils/Validate';
 
 import SmallHeader from '../SmallHeader/SmallHeader';
 import LogForm from '../LogForm/LogForm';
@@ -10,12 +11,17 @@ class Register extends React.Component {
       username: '',
       email: '',
       password: '',
+      errors: {},
+      isValid: false,
     }
+    this.validation = this.props.validation.bind(this);
+    this.handleChange = this.props.handleChange.bind(this);
+    this.validateElement = this.props.validateElement.bind(this);
+    this.arrayValidationElements = ["username", "email", "password"];
   }
 
-  handleChange(e) {
-    const target = e.target.name;
-    this.setState({[target]: e.target.value});
+  componentDidUpdate(prevProps, prevState) {
+    this.validation(this.arrayValidationElements, prevState);
   }
 
   handleSubmit(e) {
@@ -41,10 +47,12 @@ class Register extends React.Component {
             bottomLink="/signin"
             bottomLinkName="Войти"
             isName={true}
+            isValid={this.state.isValid}
             valueUserName={this.state.username}
             valueEmail={this.state.email}
             valuePassword={this.state.password}
-            onChange={this.handleChange.bind(this)}
+            errors={this.state.errors}
+            onChange={this.handleChange}
             onSubmit={this.handleSubmit.bind(this)}
           />
         </main>
@@ -53,4 +61,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+export default changeAndValidationForm(Register);

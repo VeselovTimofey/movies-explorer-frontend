@@ -1,4 +1,5 @@
 import React from 'react';
+import changeAndValidationForm from '../../utils/Validate';
 
 import Header from '../Header/Header';
 import CurrentUserContext from '../../context/CurrentUserContext';
@@ -8,17 +9,23 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      username: '',
       email: '',
       oldContext: this.context,
       isRedaction: false,
+      errors: {},
+      isValid: false,
     }
     this.handleRedactionClick = this.handleRedactionClick.bind(this);
+    this.validation = this.props.validation.bind(this);
+    this.handleChange = this.props.handleChange.bind(this);
+    this.validateElement = this.props.validateElement.bind(this);
+    this.arrayValidationElements = ["username", "email"];
   }
 
   componentDidMount() {
     this.setState({
-      name: this.context.name,
+      username: this.context.name,
       email: this.context.email,
       oldContext: this.context,
     })
@@ -27,23 +34,20 @@ class Profile extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.context !== prevState.oldContext) {
       this.setState({
-        name: this.context.name,
+        username: this.context.name,
         email: this.context.email,
         oldContext: this.context,
         isRedaction: false,
       })
     }
+
+    this.validation(this.arrayValidationElements, prevState);
   }
 
   handleRedactionClick() {
     this.setState(prevState => ({
       isRedaction: !prevState.isRedaction
     }));
-  }
-
-  handleChange(e) {
-    const target = e.target.name;
-    this.setState({[target]: e.target.value});
   }
 
   handleSubmit(e) {
@@ -66,15 +70,18 @@ class Profile extends React.Component {
         />
         <main className="content">
           <section className="profile log">
-            <h1 className="profile__title medium-font medium-font_size_big">Привет, {this.context.name}!</h1>
-            <form className="profile__form" onSubmit={this.handleSubmit.bind(this)}>
+            <h1 className="profile__title medium-font medium-font_size_big">Привет, {this.state.username}!</h1>
+            <form className="profile__form" onSubmit={this.handleSubmit.bind(this)} noValidate>
               <section className="profile__info">
                 <h2 className="profile__subtitle">Имя</h2>
                 {(!this.state.isRedaction) && (
-                  <p className="profile__data">{this.state.name}</p> 
+                  <p className="profile__data">{this.state.username}</p> 
                 )}
                 {(this.state.isRedaction) && (
-                  <input className="profile__data profile__input" type="text" id="username" name="name" placeholder="Имя" onChange={this.handleChange.bind(this)} value={this.state.name} minLength={2} maxLength={30} />
+                  <>
+                    <input className={(this.state.errors.username) ? "profile__data profile__input profile__input_error" : "profile__data profile__input"} type="text" id="username" name="username" placeholder="Имя" onChange={this.handleChange} value={this.state.username} minLength={2} maxLength={30} required/>
+                    <span className="profile__input-error" aria-live="polite">{(this.state.errors.username)}</span>
+                  </>
                 )}
                 <div className="profile__line" />
                 <h2 className="profile__subtitle">E-mail</h2>
@@ -82,13 +89,16 @@ class Profile extends React.Component {
                   <p className="profile__data">{this.state.email}</p>
                 )}
                 {(this.state.isRedaction) && (
-                  <input className="profile__data profile__input" type="email" id="useremail" name="email" placeholder="Почта" onChange={this.handleChange.bind(this)} value={this.state.email} minLength={2} maxLength={30} />
+                  <>
+                    <input className={(this.state.errors.email) ? "profile__data profile__input profile__input_error" : "profile__data profile__input"} type="email" id="useremail" name="email" placeholder="Почта" onChange={this.handleChange} value={this.state.email} minLength={2} maxLength={30} required/>
+                    <span className="profile__input-error" aria-live="polite">{(this.state.errors.email)}</span>
+                  </>
                 )}
               </section>
               {(this.state.isRedaction) && (
                 <>
-                  <span className="profile__error">При обновлении профиля произошла ошибка.</span>
-                  <button className="profile__form-button log__form-button medium-font medium-font_size_medium" type="submit">Сохранить</button>
+                  <span className="profile__error" aria-live="polite">При обновлении профиля произошла ошибка.</span>
+                  <button className="profile__form-button log__form-button medium-font medium-font_size_medium" type="submit" disabled={!this.state.isValid}>Сохранить</button>
                 </>
               )}
             </form>
@@ -105,4 +115,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default changeAndValidationForm(Profile);

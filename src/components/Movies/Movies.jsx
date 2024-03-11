@@ -6,9 +6,24 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 
 class Movies extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nameFilter: '',
+      isCurrentShortFilms: false,
+      filteredMovieCards: [],
+    }
+  }
+
   componentDidMount() {
     this.props.getMoviesCards();
     this.props.getMyMoviesCards();
+  }
+  
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.allMoviesCards != this.props.allMoviesCards) {
+      this.setState({filteredMovieCards: this.props.allMoviesCards})
+    }
   }
 
   render() {
@@ -19,9 +34,13 @@ class Movies extends React.Component {
           isLoggedIn="true"
         />
         <main className="movies">
-          <SearchForm />
+          <SearchForm 
+            onChangeInput={this.props.handleChangeFilterInput.bind(this)} 
+            onChangeCheckBox={this.props.handleChangeFilterCheckBox.bind(this)}
+            onSubmit={this.props.handleFilterSubmit.bind(this)}
+          />
           <MoviesCardList
-            cards={this.props.allMoviesCards}
+            cards={this.state.filteredMovieCards}
             myMoviesCardsId={this.props.myMoviesCardsId}
             isMyMovies={false}
             isMoviesLoaded={this.props.isMoviesLoaded}

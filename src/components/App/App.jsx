@@ -141,6 +141,27 @@ class App extends React.Component {
       .catch(console.error)
   }
 
+  handleChangeFilterInput(e) {
+    const target = e.target.name;
+    this.setState({[target]: e.target.value});
+  }
+
+  handleChangeFilterCheckBox(e) {
+    this.setState({isCurrentShortFilms: !this.state.isCurrentShortFilms});
+  }
+
+  handleFilterSubmit(e) {
+    e.preventDefault();
+
+    const suitableMovieCards = [];
+    this.props.allMoviesCards.forEach((movieCard) => {
+      if ((movieCard.nameRU.includes(this.state.nameFilter)) && (!this.state.isCurrentShortFilms || movieCard.duration <= 20)) {
+        suitableMovieCards.push(movieCard)
+      }
+    });
+    this.setState({filteredMovieCards: suitableMovieCards});
+  }
+
   render() {
     return (
       <CurrentUserContext.Provider value={this.state.currentUser}>
@@ -158,13 +179,19 @@ class App extends React.Component {
             isMoviesLoaded={this.state.isMoviesLoaded}
             onSaveMovieCard={this.handleSaveMovieCard.bind(this)}
             onDeleteMyMovieCard={this.handleDeleteMyMovieCard.bind(this)}
+            handleChangeFilterInput={this.handleChangeFilterInput} 
+            handleChangeFilterCheckBox={this.handleChangeFilterCheckBox}
+            handleFilterSubmit={this.handleFilterSubmit}
           />} />
           <Route path="/saved-movies" element={<ProtectedRouteElement
             element={SavedMovies}
             isLoggedIn={this.state.isLoggedIn}
-            myMoviesCards={this.state.myMoviesCards}
+            allMoviesCards={this.state.myMoviesCards}
             getMoviesCards={this.getMyMoviesCards.bind(this)}
             onDeleteMyMovieCard={this.handleDeleteMyMovieCard.bind(this)}
+            handleChangeFilterInput={this.handleChangeFilterInput} 
+            handleChangeFilterCheckBox={this.handleChangeFilterCheckBox}
+            handleFilterSubmit={this.handleFilterSubmit}
           />} />
           <Route path="/profile" element={<ProtectedRouteElement
             element={Profile}

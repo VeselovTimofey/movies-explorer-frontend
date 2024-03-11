@@ -2,33 +2,17 @@ import React from 'react';
 
 import MoviesCard from '../MoviesCard/MoviesCard';
 import preloader from '../../images/svg/preloader.svg'
+import useResizeWindow from '../../utils/ResizeWindow';
 
 class MoviesCardList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      numberCurrentMoviesCards: 0,
-    }
-    this.addCurrentMoviesCards = this.addCurrentMoviesCards.bind(this);
-  }
 
   componentDidMount() {
-    if (window.innerWidth >= 1280) {
-      this.setState({numberCurrentMoviesCards: 12})
-    } else if (window.innerWidth >= 650) {
-      this.setState({numberCurrentMoviesCards: 8})
-    } else {
-      this.setState({numberCurrentMoviesCards: 5})
-    }
+    this.props.inititalizationFirstsCards();
   }
 
-  addCurrentMoviesCards() {
-    if (window.innerWidth >= 1280) {
-      this.setState({numberCurrentMoviesCards: this.state.numberCurrentMoviesCards + 3})
-    } else if (window.innerWidth >= 650) {
-      this.setState({numberCurrentMoviesCards: this.state.numberCurrentMoviesCards + 2})
-    } else {
-      this.setState({numberCurrentMoviesCards: this.state.numberCurrentMoviesCards + 1})
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.widthWindow != this.props.widthWindow) {
+      this.props.updateCardsWidthWindow();
     }
   }
 
@@ -37,7 +21,7 @@ class MoviesCardList extends React.Component {
       <>
         <section className="movies__list" aria-label="Карточки фильмов.">
           {this.props.cards.map((cardInfo, i) => {
-            if (i < this.state.numberCurrentMoviesCards || this.props.isMyMovies) {
+            if (i < this.props.numberCurrentMoviesCards || this.props.isMyMovies) {
               return (<MoviesCard
                 key={cardInfo.id || cardInfo.movieId}
                 cardInfo={cardInfo}
@@ -56,7 +40,7 @@ class MoviesCardList extends React.Component {
           (
             <>
               <img className={(this.props.isMoviesLoaded) ? "movies__preloader" : "movies__preloader movies__preloader_active"} src={preloader} alt="Загрузка." />
-              <button onClick={this.addCurrentMoviesCards} className={(this.state.numberCurrentMoviesCards >= this.props.cards.length) ? "movies__button movies__button_off" : "movies__button"} type="button">Ещё</button>
+              <button onClick={this.props.addCurrentMoviesCards} className={(this.props.numberCurrentMoviesCards >= this.props.cards.length) ? "movies__button movies__button_off" : "movies__button"} type="button">Ещё</button>
             </>
           )
         }
@@ -66,4 +50,4 @@ class MoviesCardList extends React.Component {
   }
 }
 
-export default MoviesCardList;
+export default useResizeWindow(MoviesCardList);

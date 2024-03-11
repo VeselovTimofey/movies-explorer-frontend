@@ -59,4 +59,4 @@ function changeAndValidationForm (Component) {
   return ComponentWithchangeAndValidationForm;
 }
 
-export default changeAndValidationForm
+export default changeAndValidationForm;

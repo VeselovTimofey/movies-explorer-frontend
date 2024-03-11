@@ -39,11 +39,16 @@ class SavedMovies extends React.Component {
             onChangeInput={this.props.handleChangeFilterInput.bind(this)} 
             onChangeCheckBox={this.props.handleChangeFilterCheckBox.bind(this)}
             onSubmit={this.props.handleFilterSubmit.bind(this)}
+            inititalizationFirstsCards={this.props.inititalizationFirstsCards}
           />
           <MoviesCardList
             cards={this.state.filteredMovieCards}
             isMyMovies={true}
             onDeleteMyMovieCard={this.props.onDeleteMyMovieCard}
+            inititalizationFirstsCards={this.props.inititalizationFirstsCards}
+            updateCardsWidthWindow={this.props.updateCardsWidthWindow}
+            addCurrentMoviesCards={this.props.addCurrentMoviesCards}
+            numberCurrentMoviesCards={this.props.numberCurrentMoviesCards}
           />
         </main>
         <Footer />

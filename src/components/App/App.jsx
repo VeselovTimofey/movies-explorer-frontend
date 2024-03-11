@@ -12,6 +12,7 @@ import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
 import ProtectedRouteElement from '../../utils/ProtectedRoute';
 import withRouter from '../../utils/WithRouter';
+import useResizeWindow from '../../utils/ResizeWindow';
 import CurrentUserContext from '../../context/CurrentUserContext';
 
 class App extends React.Component {
@@ -24,6 +25,10 @@ class App extends React.Component {
       myMoviesCards: [],
       myMoviesCardsId: [],
       isMoviesLoaded: false,
+      numberCurrentMoviesCards: 0,
+      oneInRow: false,
+      twoInRow: false,
+      threeInRow: false,
     }
   }
 
@@ -155,6 +160,7 @@ class App extends React.Component {
       }
     });
     this.setState({filteredMovieCards: suitableMovieCards});
+    this.props.inititalizationFirstsCards();
   }
 
   handleFilterSubmit(e) {
@@ -167,6 +173,62 @@ class App extends React.Component {
       }
     });
     this.setState({filteredMovieCards: suitableMovieCards});
+    this.props.inititalizationFirstsCards();
+  }
+
+  inititalizationFirstsCards() {
+    if (this.props.widthWindow >= 1280) {
+      this.setState({
+        numberCurrentMoviesCards: 12,
+        threeInRow: true,
+      })
+    } else if (this.props.widthWindow >= 650) {
+      this.setState({
+        numberCurrentMoviesCards: 8,
+        twoInRow: true,
+      })
+    } else {
+      this.setState({
+        numberCurrentMoviesCards: 5,
+        oneInRow: true,
+      })
+    }
+  }
+
+  updateCardsWidthWindow () {
+    if (this.state.threeInRow && this.props.widthWindow < 1280) {
+      this.setState({
+        threeInRow: false,
+        twoInRow: true,
+        numberCurrentMoviesCards: 8,
+      })
+    } else if (this.state.twoInRow && this.props.widthWindow >= 1280) {
+      this.setState({
+        twoInRow: false,
+        threeInRow: true,
+        numberCurrentMoviesCards: 12,
+      })
+    } else if (this.state.twoInRow && this.props.widthWindow < 650) {
+      this.setState({
+        twoInRow: false,
+        oneInRow: true,
+        numberCurrentMoviesCards: 5,
+      })
+    } else if (this.state.oneInRow && this.props.widthWindow >= 650) {
+      this.setState({
+        oneInRow: false,
+        twoInRow: true,
+        numberCurrentMoviesCards: 8,
+      })
+    }
+  }
+
+  addCurrentMoviesCards() {
+    if (this.props.widthWindow >= 1280) {
+      this.setState({numberCurrentMoviesCards: this.state.numberCurrentMoviesCards + 3})
+    } else {
+      this.setState({numberCurrentMoviesCards: this.state.numberCurrentMoviesCards + 2})
+    }
   }
 
   render() {
@@ -189,6 +251,10 @@ class App extends React.Component {
             handleChangeFilterInput={this.handleChangeFilterInput} 
             handleChangeFilterCheckBox={this.handleChangeFilterCheckBox}
             handleFilterSubmit={this.handleFilterSubmit}
+            inititalizationFirstsCards={this.inititalizationFirstsCards.bind(this)}
+            updateCardsWidthWindow={this.updateCardsWidthWindow.bind(this)}
+            addCurrentMoviesCards={this.addCurrentMoviesCards.bind(this)}
+            numberCurrentMoviesCards={this.state.numberCurrentMoviesCards}
           />} />
           <Route path="/saved-movies" element={<ProtectedRouteElement
             element={SavedMovies}
@@ -199,6 +265,10 @@ class App extends React.Component {
             handleChangeFilterInput={this.handleChangeFilterInput} 
             handleChangeFilterCheckBox={this.handleChangeFilterCheckBox}
             handleFilterSubmit={this.handleFilterSubmit}
+            inititalizationFirstsCards={this.inititalizationFirstsCards.bind(this)}
+            updateCardsWidthWindow={this.updateCardsWidthWindow.bind(this)}
+            addCurrentMoviesCards={this.addCurrentMoviesCards.bind(this)}
+            numberCurrentMoviesCards= {this.state.numberCurrentMoviesCards}
           />} />
           <Route path="/profile" element={<ProtectedRouteElement
             element={Profile}
@@ -219,4 +289,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
+export default useResizeWindow(withRouter(App));

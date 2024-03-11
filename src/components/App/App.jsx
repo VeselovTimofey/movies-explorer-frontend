@@ -147,6 +147,14 @@ class App extends React.Component {
 
   handleChangeFilterCheckBox(e) {
     this.setState({isCurrentShortFilms: !this.state.isCurrentShortFilms});
+
+    const suitableMovieCards = [];
+    this.props.allMoviesCards.forEach((movieCard) => {
+      if ((movieCard.nameRU.toLowerCase().includes(this.state.nameFilter.toLowerCase())) && (this.state.isCurrentShortFilms || movieCard.duration <= 20)) {
+        suitableMovieCards.push(movieCard)
+      }
+    });
+    this.setState({filteredMovieCards: suitableMovieCards});
   }
 
   handleFilterSubmit(e) {

@@ -48,6 +48,9 @@ class MoviesCardList extends React.Component {
               />)
             }
           })}
+          {(this.props.cards.length == 0 && (this.props.isMoviesLoaded || this.props.isMyMovies)) && (
+            <span className="movies__list-span medium-font medium-font_size_big">Ничего не найдено</span>
+          )}
         </section>
         {(!this.props.isMyMovies) &&
           (

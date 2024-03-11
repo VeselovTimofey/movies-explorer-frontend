@@ -7,6 +7,12 @@
   row-gap: 57px;
 }
 
+.movies__list-span {
+  margin-bottom: 100px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
 .movies__preloader {
   display: none;
   height: 38px;

@@ -79,7 +79,7 @@ class Profile extends React.Component {
         />
         <main className="content">
           <section className="profile log">
-            <span className={(this.state.isSuccess) ? "profile__success profile__success_activate medium-font medium-font_size_big" : "profile__success medium-font medium-font_size_big"}>Данные успешно сохранены.</span>
+            <span className={(this.state.isSuccess) ? "profile__success profile__success_activate medium-font medium-font_size_big" : "profile__success medium-font medium-font_size_big"}>Данные успешно сохранены</span>
             <h1 className="profile__title medium-font medium-font_size_big">Привет, {this.context.name}!</h1>
             <form className="profile__form" onSubmit={this.handleSubmit.bind(this)} noValidate>
               <section className="profile__info">

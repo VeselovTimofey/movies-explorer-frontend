@@ -38,7 +38,7 @@ class Profile extends React.Component {
         username: this.context.name,
         email: this.context.email,
         oldContext: this.context,
-        isRedaction: false
+        isRedaction: false,
       })
     }
 
@@ -80,7 +80,7 @@ class Profile extends React.Component {
         <main className="content">
           <section className="profile log">
             <span className={(this.state.isSuccess) ? "profile__success profile__success_activate medium-font medium-font_size_big" : "profile__success medium-font medium-font_size_big"}>Данные успешно сохранены.</span>
-            <h1 className="profile__title medium-font medium-font_size_big">Привет, {this.state.username}!</h1>
+            <h1 className="profile__title medium-font medium-font_size_big">Привет, {this.context.name}!</h1>
             <form className="profile__form" onSubmit={this.handleSubmit.bind(this)} noValidate>
               <section className="profile__info">
                 <h2 className="profile__subtitle">Имя</h2>
@@ -108,7 +108,7 @@ class Profile extends React.Component {
               {(this.state.isRedaction) && (
                 <>
                   <span className="profile__error" aria-live="polite"></span>
-                  <button className="profile__form-button log__form-button medium-font medium-font_size_medium" type="submit" disabled={!this.state.isValid}>Сохранить</button>
+                  <button className="profile__form-button log__form-button medium-font medium-font_size_medium" type="submit" disabled={(!this.state.isValid) || (this.state.username == this.context.name && this.state.email == this.context.email)}>Сохранить</button>
                 </>
               )}
             </form>

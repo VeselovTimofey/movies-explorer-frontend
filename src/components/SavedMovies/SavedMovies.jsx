@@ -34,6 +34,8 @@ class SavedMovies extends React.Component {
         />
         <main className="movies">
           <SearchForm 
+            nameFilter={this.state.nameFilter}
+            isCurrentShortFilms={this.state.isCurrentShortFilms}
             onChangeInput={this.props.handleChangeFilterInput.bind(this)} 
             onChangeCheckBox={this.props.handleChangeFilterCheckBox.bind(this)}
             onSubmit={this.props.handleFilterSubmit.bind(this)}

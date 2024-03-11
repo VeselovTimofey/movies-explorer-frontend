@@ -154,7 +154,7 @@ class App extends React.Component {
 
     const suitableMovieCards = [];
     this.props.allMoviesCards.forEach((movieCard) => {
-      if ((movieCard.nameRU.includes(this.state.nameFilter)) && (!this.state.isCurrentShortFilms || movieCard.duration <= 20)) {
+      if ((movieCard.nameRU.toLowerCase().includes(this.state.nameFilter.toLowerCase())) && (!this.state.isCurrentShortFilms || movieCard.duration <= 20)) {
         suitableMovieCards.push(movieCard)
       }
     });

@@ -15,6 +15,7 @@ class Profile extends React.Component {
       isRedaction: false,
       errors: {},
       isValid: false,
+      isSuccess: false,
     }
     this.handleRedactionClick = this.handleRedactionClick.bind(this);
     this.validation = this.props.validation.bind(this);
@@ -37,8 +38,16 @@ class Profile extends React.Component {
         username: this.context.name,
         email: this.context.email,
         oldContext: this.context,
-        isRedaction: false,
+        isRedaction: false
       })
+    }
+
+    if ((this.context !== prevState.oldContext) && (this.state.isRedaction)) {
+      this.setState({isSuccess: true})
+    }
+
+    if ((this.state.username !== prevState.username) || (this.state.email !== prevState.email)) {
+      this.setState({isSuccess: false})
     }
 
     this.validation(this.arrayValidationElements, prevState);
@@ -70,6 +79,7 @@ class Profile extends React.Component {
         />
         <main className="content">
           <section className="profile log">
+            <span className={(this.state.isSuccess) ? "profile__success profile__success_activate medium-font medium-font_size_big" : "profile__success medium-font medium-font_size_big"}>Данные успешно сохранены.</span>
             <h1 className="profile__title medium-font medium-font_size_big">Привет, {this.state.username}!</h1>
             <form className="profile__form" onSubmit={this.handleSubmit.bind(this)} noValidate>
               <section className="profile__info">

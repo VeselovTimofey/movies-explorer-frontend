@@ -4,6 +4,20 @@
   align-items: center;
 }
 
+.profile__success {
+  position: fixed;
+  left: auto;
+  top: 90px;
+  color: #3ddc84;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+.profile__success_activate {
+  opacity: 0.7;
+}
+
 .profile__title {
   margin: 74px 0 0 0;
   letter-spacing: 0em;

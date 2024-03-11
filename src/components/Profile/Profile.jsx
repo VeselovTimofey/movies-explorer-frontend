@@ -97,7 +97,7 @@ class Profile extends React.Component {
               </section>
               {(this.state.isRedaction) && (
                 <>
-                  <span className="profile__error" aria-live="polite">При обновлении профиля произошла ошибка.</span>
+                  <span className="profile__error" aria-live="polite"></span>
                   <button className="profile__form-button log__form-button medium-font medium-font_size_medium" type="submit" disabled={!this.state.isValid}>Сохранить</button>
                 </>
               )}

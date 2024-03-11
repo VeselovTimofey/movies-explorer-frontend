@@ -6,6 +6,10 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 
 class SavedMovies extends React.Component {
+  componentDidMount() {
+    this.props.getMoviesCards();
+  }
+
   render() {
     return (
       <>
@@ -17,7 +21,8 @@ class SavedMovies extends React.Component {
           <SearchForm />
           <MoviesCardList
             cards={this.props.myMoviesCards}
-            isMyMovies={true}  
+            isMyMovies={true}
+            onDeleteMyMovieCard={this.props.onDeleteMyMovieCard}
           />
         </main>
         <Footer />

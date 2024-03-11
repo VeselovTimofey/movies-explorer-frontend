@@ -94,6 +94,28 @@ class Api {
       return this._getResponseData(response)
     })
   }
+
+  getMovies() {
+    return fetch(this._baseUrl + "/movies", {
+      method: "GET",
+      credentials: "include",
+      headers: {"Content-Type": "application/json"},
+    })
+    .then((response) => {
+      return this._getResponseData(response)
+    })
+  }
+
+  deleteMovie(id) {
+    return fetch(this._baseUrl + "/movies/" + id, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {"Content-Type": "application/json"},
+    })
+    .then((response) => {
+      return this._getResponseData(response)
+    })
+  }
 }
 
 const mainApi = new Api('https://api.veselov.diplom.nomoredomainsmonster.ru')

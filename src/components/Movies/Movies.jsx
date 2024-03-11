@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 class Movies extends React.Component {
   componentDidMount() {
     this.props.getMoviesCards();
+    this.props.getMyMoviesCards();
   }
 
   render() {
@@ -21,9 +22,11 @@ class Movies extends React.Component {
           <SearchForm />
           <MoviesCardList
             cards={this.props.allMoviesCards}
+            myMoviesCardsId={this.props.myMoviesCardsId}
             isMyMovies={false}
             isMoviesLoaded={this.props.isMoviesLoaded}
-            onSaveMoviesCards={this.props.onSaveMoviesCards}
+            onSaveMovieCard={this.props.onSaveMovieCard}
+            onDeleteMyMovieCard={this.props.onDeleteMyMovieCard}
           />
         </main>
         <Footer />

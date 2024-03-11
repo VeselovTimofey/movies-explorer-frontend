@@ -11,10 +11,12 @@ class MoviesCardList extends React.Component {
         <section className="movies__list" aria-label="Карточки фильмов.">
           {this.props.cards.map((cardInfo, i) => (
             <MoviesCard
-              key={cardInfo.id}
-              cardInfo={cardInfo} 
+              key={cardInfo.id || cardInfo.movieId}
+              cardInfo={cardInfo}
+              myMoviesCardsId={this.props.myMoviesCardsId}
               isMyMovies={this.props.isMyMovies}
-              onSaveMoviesCards={this.props.onSaveMoviesCards}  
+              onSaveMovieCard={this.props.onSaveMovieCard}
+              onDeleteMyMovieCard={this.props.onDeleteMyMovieCard}
             />
           ))}
         </section>

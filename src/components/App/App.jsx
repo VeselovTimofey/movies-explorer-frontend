@@ -23,6 +23,7 @@ class App extends React.Component {
       currentUser: {},
       allMoviesCards: [],
       myMoviesCards: [],
+      myMoviesCardsId: [],
       isMoviesLoaded: false,
     }
   }
@@ -106,12 +107,37 @@ class App extends React.Component {
       .catch(console.error)
   }
 
-  handleSaveMoviesCards(newCards) {
+  getMyMoviesCards() {
+    mainApi.getMovies()
+      .then((data) => {
+        const moviesId = []
+        data.data.forEach(cardInfo => {
+          moviesId.push(cardInfo.movieId)
+        });
+        this.setState({
+          myMoviesCards: data.data,
+          myMoviesCardsId: moviesId,
+        })
+      })
+      .catch(console.error)
+  }
+
+  handleSaveMovieCard(newCards) {
     mainApi.postMovie(newCards)
       .then((data) => {
         this.setState((prevState) => ({
-          ...prevState, myMoviesCards: [...prevState.myMoviesCards, data.data]
+          ...prevState,
+          myMoviesCards: [...prevState.myMoviesCards, data.data],
+          myMoviesCardsId: [...prevState.myMoviesCardsId, data.data.movieId],
         }))
+      })
+      .catch(console.error)
+  }
+
+  handleDeleteMyMovieCard(id) {
+    mainApi.deleteMovie(id)
+      .then(() => {
+        this.getMyMoviesCards()
       })
       .catch(console.error)
   }
@@ -127,14 +153,19 @@ class App extends React.Component {
             element={Movies}
             isLoggedIn={this.state.isLoggedIn}
             getMoviesCards={this.getMoviesCards.bind(this)}
+            getMyMoviesCards={this.getMyMoviesCards.bind(this)}
             allMoviesCards={this.state.allMoviesCards}
+            myMoviesCardsId={this.state.myMoviesCardsId}
             isMoviesLoaded={this.state.isMoviesLoaded}
-            onSaveMoviesCards={this.handleSaveMoviesCards.bind(this)}
+            onSaveMovieCard={this.handleSaveMovieCard.bind(this)}
+            onDeleteMyMovieCard={this.handleDeleteMyMovieCard.bind(this)}
           />} />
           <Route path="/saved-movies" element={<ProtectedRouteElement
             element={SavedMovies}
             isLoggedIn={this.state.isLoggedIn}
             myMoviesCards={this.state.myMoviesCards}
+            getMoviesCards={this.getMyMoviesCards.bind(this)}
+            onDeleteMyMovieCard={this.handleDeleteMyMovieCard.bind(this)}
           />} />
           <Route path="/profile" element={<ProtectedRouteElement
             element={Profile}

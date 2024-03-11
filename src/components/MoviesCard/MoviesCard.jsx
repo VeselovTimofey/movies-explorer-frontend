@@ -5,10 +5,11 @@ import checkLogoPath from '../../images/svg/check.svg'
 class MoviesCard extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSaveMoviesCardsClick = this.handleSaveMoviesCardsClick.bind(this);
+    this.handleSaveMovieCardClick = this.handleSaveMovieCardClick.bind(this);
+    this.handleDeleteMyMovieCard = this.handleDeleteMyMovieCard.bind(this);
   }
 
-  handleSaveMoviesCardsClick() {
+  handleSaveMovieCardClick() {
     const newMovieCard = {
       contry: this.props.cardInfo.country,
       director: this.props.cardInfo.director,
@@ -23,17 +24,23 @@ class MoviesCard extends React.Component {
       nameEN: this.props.cardInfo.nameEN,
     }
 
-    this.props.onSaveMoviesCards(newMovieCard);
+    this.props.onSaveMovieCard(newMovieCard);
+  }
+
+  handleDeleteMyMovieCard() {
+    this.props.onDeleteMyMovieCard(this.props.cardInfo.movieId || this.props.cardInfo.id);
   }
 
   render() {
     return (
       <article className="movies-card">
         <div className="movies-card__status">
-          {(this.props.isMyMovies) && (<button className="movies-card__check movies-card__check_color_grey movies-card__check_hover_visible" type="button">&#215;</button>)}
-          {(!this.props.isMyMovies) && (<button onClick={this.handleSaveMoviesCardsClick} className="movies-card__save" type="button">Сохранить</button>)}
-          {(!this.props.isMyMovies) && (this.props.cardInfo.save) && (
-            <button className="movies-card__check movies-card__check_color_pink" type="button">
+          {(this.props.isMyMovies) && (<button onClick={this.handleDeleteMyMovieCard} className="movies-card__check movies-card__check_color_grey movies-card__check_hover_visible" type="button">&#215;</button>)}
+          {(!this.props.isMyMovies) && !(this.props.myMoviesCardsId.includes(this.props.cardInfo.id)) && (
+            <button onClick={this.handleSaveMovieCardClick} className="movies-card__save" type="button">Сохранить</button>
+          )}
+          {(!this.props.isMyMovies) && (this.props.myMoviesCardsId.includes(this.props.cardInfo.id)) && (
+            <button onClick={this.handleDeleteMyMovieCard} className="movies-card__check movies-card__check_color_pink" type="button">
               <img className="movies-card__check-image" src={checkLogoPath} alt="Иконка в виде галочки." />
             </button>
           )}

@@ -106,11 +106,15 @@ class Api {
     })
   }
 
-  deleteMovie(id) {
-    return fetch(this._baseUrl + "/movies/" + id, {
+  deleteMovie(movieId, owner) {
+    return fetch(this._baseUrl + "/movies/", {
       method: "DELETE",
       credentials: "include",
       headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        movieId,
+        owner,
+      })
     })
     .then((response) => {
       return this._getResponseData(response)

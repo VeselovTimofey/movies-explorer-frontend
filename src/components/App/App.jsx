@@ -137,8 +137,8 @@ class App extends React.Component {
       .catch(console.error)
   }
 
-  handleDeleteMyMovieCard(id) {
-    mainApi.deleteMovie(id)
+  handleDeleteMyMovieCard(movieId, owner) {
+    mainApi.deleteMovie(movieId, owner)
       .then(() => {
         this.getMyMoviesCards()
       })

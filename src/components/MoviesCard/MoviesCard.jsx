@@ -1,8 +1,10 @@
 import React from 'react';
 
 import checkLogoPath from '../../images/svg/check.svg'
+import CurrentUserContext from '../../context/CurrentUserContext';
 
 class MoviesCard extends React.Component {
+  static contextType = CurrentUserContext;
   constructor(props) {
     super(props);
     this.handleSaveMovieCardClick = this.handleSaveMovieCardClick.bind(this);
@@ -28,7 +30,7 @@ class MoviesCard extends React.Component {
   }
 
   handleDeleteMyMovieCard() {
-    this.props.onDeleteMyMovieCard(this.props.cardInfo.movieId || this.props.cardInfo.id);
+    this.props.onDeleteMyMovieCard((this.props.cardInfo.movieId || this.props.cardInfo.id), this.context._id);
   }
 
   render() {

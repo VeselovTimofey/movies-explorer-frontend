@@ -29,7 +29,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(window.innerWidth)
     if (Cookies.get("isLoggedIn")) {
       mainApi.authentication()
         .then((data) => {

@@ -54,7 +54,7 @@ class Profile extends React.Component {
     e.preventDefault();
 
     const newDataUser = {
-      name: this.state.name,
+      name: this.state.username,
       email: this.state.email,
     }
 

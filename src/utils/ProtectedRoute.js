@@ -3,8 +3,14 @@ import { Navigate } from 'react-router-dom';
 
 const ProtectedRouteElement = ({element: Component, ...props}) => {
   return(
-    localStorage.getItem("isLoggedIn") ? <Component {...props} /> : <Navigate to="/signin" replace/>
+    localStorage.getItem("isLoggedIn") ? <Component {...props} /> : <Navigate to="/" replace/>
   )
 }
 
-export default ProtectedRouteElement;
+const ProtectedRegisterAndLoginRouteElement = ({element: Component, ...props}) => {
+  return(
+    localStorage.getItem("isLoggedIn") ? <Navigate to="/" replace/> : <Component {...props} />  
+  )
+}
+
+export {ProtectedRouteElement, ProtectedRegisterAndLoginRouteElement};

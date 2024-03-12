@@ -10,7 +10,7 @@ import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
-import ProtectedRouteElement from '../../utils/ProtectedRoute';
+import {ProtectedRouteElement, ProtectedRegisterAndLoginRouteElement} from '../../utils/ProtectedRoute';
 import withRouter from '../../utils/WithRouter';
 import useResizeWindow from '../../utils/ResizeWindow';
 import CurrentUserContext from '../../context/CurrentUserContext';
@@ -276,10 +276,12 @@ class App extends React.Component {
             onSignOut={this.handleSignOut.bind(this)}
             onPatchUserInfo={this.handlePatchUserInfo.bind(this)}
           />} />
-          <Route path="/signup" element={<Register
+          <Route path="/signup" element={<ProtectedRegisterAndLoginRouteElement
+            element={Register}
             onRegister={this.handleRegister.bind(this)}
           />} />
-          <Route path="/signin" element={<Login
+          <Route path="/signin" element={<ProtectedRegisterAndLoginRouteElement
+            element={Login}
             onAuthorization={this.handleAuthorizationUser.bind(this)}
           />} />
           <Route path="*" element={<NotFound />} />

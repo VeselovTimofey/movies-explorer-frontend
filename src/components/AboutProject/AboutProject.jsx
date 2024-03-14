@@ -6,12 +6,12 @@ class AboutProject extends React.Component {
       <section className="about-project section" id="about-project">
         <h2 className="about-project__title section__title reqular-font reqular-font_size_big">О проекте</h2>
         <section className="time-description">
-          <h3 className="time-description__subtitle">Дипломный проект включал 5 этапов</h3>
+          <h3 className="time-description__subtitle">Учебный проект включал 5 этапов</h3>
           <p className="section__paragraph reqular-font reqular-font_size_medium">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
         </section>
         <section className="time-description">
-          <h3 className="time-description__subtitle">На выполнение диплома ушло 5 недель</h3>
-          <p className="section__paragraph reqular-font reqular-font_size_medium">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+          <h3 className="time-description__subtitle">На выполнение проекта ушло 5 недель</h3>
+          <p className="section__paragraph reqular-font reqular-font_size_medium">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно сдать проект.</p>
         </section>
         <section className="time-line" aria-label="График выполнения.">
           <div className="time-line__back-end">

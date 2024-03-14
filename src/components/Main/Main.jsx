@@ -12,7 +12,10 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <Header pageName="Main" />
+        <Header
+          pageName="Main"
+          isLoggedIn={this.props.isLoggedIn}
+        />
         <main className="content">
           <Promo />
           <AboutProject />

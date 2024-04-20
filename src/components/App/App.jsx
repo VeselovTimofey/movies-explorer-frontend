@@ -48,7 +48,7 @@ class App extends React.Component {
     if (this.state.isLoggedIn === true && prevState.isLoggedIn === false) {
       this.authenticationUser();
     }
-    if (this.state.errorMessage != prevState.errorMessage) {
+    if (this.state.errorMessage != prevState.errorMessage && prevState.errorMessage === '') {
       setTimeout(() => {this.setState({errorMessage: ''})}, 5000)
     }
   }

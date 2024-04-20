@@ -14,6 +14,7 @@ import {ProtectedRouteElement, ProtectedRegisterAndLoginRouteElement} from '../.
 import withRouter from '../../utils/WithRouter';
 import useResizeWindow from '../../utils/ResizeWindow';
 import CurrentUserContext from '../../context/CurrentUserContext';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends React.Component {
       oneInRow: false,
       twoInRow: false,
       threeInRow: false,
+      errorMessage: '',
     }
   }
 
@@ -38,13 +40,16 @@ class App extends React.Component {
         .then((data) => {
           this.setState({currentUser: data.data, isLoggedIn: true})
         })
-        .catch(console.error)
+        .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.isLoggedIn === true && prevState.isLoggedIn === false) {
       this.authenticationUser();
+    }
+    if (this.state.errorMessage != prevState.errorMessage) {
+      setTimeout(() => {this.setState({errorMessage: ''})}, 5000)
     }
   }
 
@@ -55,7 +60,7 @@ class App extends React.Component {
         this.setState({isLoggedIn: true,});
         this.props.router.navigate("/movies");
       })
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   authenticationUser() {
@@ -64,14 +69,14 @@ class App extends React.Component {
         .then((data) => {
           this.setState({currentUser: data.data,})
         })
-        .catch(console.error)
+        .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
     }
   }
 
   handleRegister(newUser) {
     mainApi.signup(newUser)
       .then(() => {this.handleAuthorizationUser(newUser)})
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   handleSignOut() {
@@ -84,7 +89,7 @@ class App extends React.Component {
         })
         this.props.router.navigate("/");
       })
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   handlePatchUserInfo(newDataUser) {
@@ -92,7 +97,7 @@ class App extends React.Component {
       .then((data) => {
         this.setState({currentUser: data.data})
       })
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   getMoviesCards() {
@@ -107,7 +112,7 @@ class App extends React.Component {
           isMoviesLoaded: true,
         })
       })
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   getMyMoviesCards() {
@@ -122,7 +127,7 @@ class App extends React.Component {
           myMoviesCardsId: moviesId,
         })
       })
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   handleSaveMovieCard(newCards) {
@@ -134,7 +139,7 @@ class App extends React.Component {
           myMoviesCardsId: [...prevState.myMoviesCardsId, data.data.movieId],
         }))
       })
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   handleDeleteMyMovieCard(movieId, owner) {
@@ -142,7 +147,7 @@ class App extends React.Component {
       .then(() => {
         this.getMyMoviesCards()
       })
-      .catch(console.error)
+      .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
 
   handleChangeFilterInput(e) {
@@ -286,6 +291,9 @@ class App extends React.Component {
           />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ErrorMessage
+          errorMessage={this.state.errorMessage} 
+        />
       </CurrentUserContext.Provider>
     );
   }

@@ -1,0 +1,31 @@
+.error {
+  position: fixed;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+}
+
+.error__message {
+  color: #FF0000;
+  animation: 
+  1s show linear,
+  1s disappear 3s linear forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 80%;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 80%;
+  }
+  to {
+    opacity: 0;
+  }
+}

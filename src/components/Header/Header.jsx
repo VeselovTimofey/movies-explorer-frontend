@@ -8,7 +8,6 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogin: false,
       isNavOpen: false,
     }
     this.handleNavClick = this.handleNavClick.bind(this);
@@ -26,13 +25,13 @@ class Header extends React.Component {
         <Link className="header__logo" to="/">
           <img src={logoPath} alt="Зелёное кольцо." />
         </Link>
-        {(!this.state.isLogin) && (
+        {(!this.props.isLoggedIn) && (
           <>
             <Link to="/signup" className="header__link header__link_type_registration medium-font medium-font_size_tiny">Регистрация</Link>
             <Link to="/signin" className="header__link header__link_type_login">Войти</Link>
           </>
         )}
-        {(this.state.isLogin) && (
+        {(this.props.isLoggedIn) && (
           <>
             <button type="button" onClick={this.handleNavClick} className="header__button-open">
               <img className="header__image-open" src={popupPath} alt="Три горизонтальные линии." />

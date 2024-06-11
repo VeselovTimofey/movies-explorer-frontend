@@ -1,4 +1,4 @@
-const GH_PAGES = true;
+const GH_PAGES = false;
 
 function initialRoot(GH_PAGES) {
   if (GH_PAGES) {

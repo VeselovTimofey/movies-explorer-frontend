@@ -4,6 +4,8 @@ import changeAndValidationForm from '../../utils/Validate';
 import SmallHeader from '../SmallHeader/SmallHeader';
 import LogForm from '../LogForm/LogForm';
 
+import { GH_PAGES_ROOT } from '../../utils/constans/gh-pages';
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +44,7 @@ class Login extends React.Component {
           <LogForm
             formButton="Войти"
             bottomParagraph="Ещё не зарегистрированы?"
-            bottomLink="/signup"
+            bottomLink={GH_PAGES_ROOT + "/signup"}
             bottomLinkName="Регистрация"
             isName={false}
             isValid={this.state.isValid}

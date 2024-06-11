@@ -4,7 +4,7 @@
 
 Frontend часть приложения поиска информации о фильмах. Функционал регистрация и редактирование профиля, поиск фильмов, добавление фильма в избранное.
 
-[Сайт](https://www.veselov-diplom.ru/)
+[Сайт](https://veselovtimofey.github.io/movies-explorer-frontend/)
 
 ### Технологии
 

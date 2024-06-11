@@ -10,11 +10,12 @@ import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
-import {ProtectedRouteElement, ProtectedRegisterAndLoginRouteElement} from '../../utils/ProtectedRoute';
+import { ProtectedRouteElement, ProtectedRegisterAndLoginRouteElement } from '../../utils/ProtectedRoute';
 import withRouter from '../../utils/WithRouter';
 import useResizeWindow from '../../utils/ResizeWindow';
 import CurrentUserContext from '../../context/CurrentUserContext';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { GH_PAGES_ROOT } from '../../utils/constans/gh-pages';
 
 class App extends React.Component {
   constructor(props) {
@@ -58,7 +59,7 @@ class App extends React.Component {
       .then(() => {
         localStorage.setItem("isLoggedIn", true);
         this.setState({isLoggedIn: true,});
-        this.props.router.navigate("/movies");
+        this.props.router.navigate(GH_PAGES_ROOT + "/movies");
       })
       .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
@@ -87,7 +88,7 @@ class App extends React.Component {
           isLoggedIn: false,
           currentUser: {},
         })
-        this.props.router.navigate("/");
+        this.props.router.navigate(GH_PAGES_ROOT + "/");
       })
       .catch(error => {error.then(object => this.setState({errorMessage: object.message}))})
   }
@@ -240,10 +241,10 @@ class App extends React.Component {
     return (
       <CurrentUserContext.Provider value={this.state.currentUser}>
         <Routes>
-          <Route path="/" element={<Main
+          <Route path={GH_PAGES_ROOT + "/"} element={<Main
             isLoggedIn={this.state.isLoggedIn}
           />} />
-          <Route path="/movies" element={<ProtectedRouteElement
+          <Route path={GH_PAGES_ROOT + "/movies"} element={<ProtectedRouteElement
             element={Movies}
             isLoggedIn={this.state.isLoggedIn}
             getMoviesCards={this.getMoviesCards.bind(this)}
@@ -261,7 +262,7 @@ class App extends React.Component {
             addCurrentMoviesCards={this.addCurrentMoviesCards.bind(this)}
             numberCurrentMoviesCards={this.state.numberCurrentMoviesCards}
           />} />
-          <Route path="/saved-movies" element={<ProtectedRouteElement
+          <Route path={GH_PAGES_ROOT + "/saved-movies"} element={<ProtectedRouteElement
             element={SavedMovies}
             isLoggedIn={this.state.isLoggedIn}
             allMoviesCards={this.state.myMoviesCards}
@@ -275,17 +276,17 @@ class App extends React.Component {
             addCurrentMoviesCards={this.addCurrentMoviesCards.bind(this)}
             numberCurrentMoviesCards= {this.state.numberCurrentMoviesCards}
           />} />
-          <Route path="/profile" element={<ProtectedRouteElement
+          <Route path={GH_PAGES_ROOT + "/profile"} element={<ProtectedRouteElement
             element={Profile}
             isLoggedIn={this.state.isLoggedIn}
             onSignOut={this.handleSignOut.bind(this)}
             onPatchUserInfo={this.handlePatchUserInfo.bind(this)}
           />} />
-          <Route path="/signup" element={<ProtectedRegisterAndLoginRouteElement
+          <Route path={GH_PAGES_ROOT + "/signup"} element={<ProtectedRegisterAndLoginRouteElement
             element={Register}
             onRegister={this.handleRegister.bind(this)}
           />} />
-          <Route path="/signin" element={<ProtectedRegisterAndLoginRouteElement
+          <Route path={GH_PAGES_ROOT + "/signin"} element={<ProtectedRegisterAndLoginRouteElement
             element={Login}
             onAuthorization={this.handleAuthorizationUser.bind(this)}
           />} />
